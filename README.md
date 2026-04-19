@@ -2,6 +2,10 @@
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=loulanyue&show_icons=true&locale=cn&include_all_commits=true&count_private=true)
 
+![Total PRs](https://img.shields.io/badge/%E5%8F%91%E8%B5%B7%E7%9A%84%20PR%20%E6%80%BB%E6%95%B0-2-blue?style=flat-square)
+![Total Issues](https://img.shields.io/badge/%E6%8F%90%E5%87%BA%E7%9A%84%20Issue%20%E6%80%BB%E6%95%B0-2-orange?style=flat-square)
+![Contributed To](https://img.shields.io/badge/%E8%B4%A1%E7%8C%AE%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%95%B0%EF%BC%88%E5%8E%BB%E5%B9%B4%EF%BC%89-0-green?style=flat-square)
+
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
 
