@@ -20,11 +20,7 @@
 - 可复用的工程模板与个人工具仓库
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=loulanyue&locale=zh_Hans&date_format=%5BY.%5Dn.j)
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=loulanyue&show_icons=true&locale=cn&include_all_commits=true&count_private=true)
 
-## 联系我
-
-[![Email](https://img.shields.io/badge/Email-260355617%40qq.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:260355617@qq.com)
 
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
