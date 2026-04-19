@@ -13,15 +13,18 @@
 - `4,200+` 累计贡献，保持长期活跃的提交节奏
 - `50` 天最长连续贡献，具备稳定推进和持续交付能力
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=loulanyue&show_icons=true&locale=cn&include_all_commits=true&count_private=true)
+## 关注方向
+
+- AI Coding 与开发提效
+- 自动化脚本与工作流编排
+- 可复用的工程模板与个人工具仓库
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=loulanyue&locale=zh_Hans&date_format=%5BY.%5Dn.j)
-![Trophy](https://github-profile-trophy.vercel.app/?username=loulanyue&theme=flat&no-frame=true&row=1&column=6)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=loulanyue&show_icons=true&locale=cn&include_all_commits=true&count_private=true)
 
 ## 联系我
 
 [![Email](https://img.shields.io/badge/Email-260355617%40qq.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:260355617@qq.com)
-[![GitHub](https://img.shields.io/badge/GitHub-loulanyue-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/loulanyue)
 
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
