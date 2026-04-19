@@ -1,4 +1,10 @@
-## Hi there 👋
+## 你好，我是 LoulanYue
+
+专注于把零散想法落成可交付的工具、自动化和工程实践。
+
+- 热衷于 AI 辅助开发、效率工具和工作流自动化
+- 持续记录编码习惯，并把可复用经验沉淀成模板
+- 欢迎交流个人主页、自动化脚本和开发提效话题
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=loulanyue&show_icons=true&locale=cn&include_all_commits=true&count_private=true)
 
