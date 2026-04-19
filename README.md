@@ -12,6 +12,11 @@
 ![Total Issues](https://img.shields.io/badge/%E6%8F%90%E5%87%BA%E7%9A%84%20Issue%20%E6%80%BB%E6%95%B0-2-orange?style=flat-square)
 ![Contributed To](https://img.shields.io/badge/%E8%B4%A1%E7%8C%AE%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%95%B0%EF%BC%88%E5%8E%BB%E5%B9%B4%EF%BC%89-0-green?style=flat-square)
 
+## 联系我
+
+[![Email](https://img.shields.io/badge/Email-260355617%40qq.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:260355617@qq.com)
+[![GitHub](https://img.shields.io/badge/GitHub-loulanyue-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/loulanyue)
+
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
 
