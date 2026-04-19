@@ -6,10 +6,6 @@
 - 持续记录编码习惯，并把可复用经验沉淀成模板
 - 欢迎交流个人主页、自动化脚本和开发提效话题
 
-```bash
-git commit -m "YOLO"
-```
-
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=loulanyue&show_icons=true&locale=cn&include_all_commits=true&count_private=true)
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=loulanyue&locale=zh_Hans&date_format=%5BY.%5Dn.j)
