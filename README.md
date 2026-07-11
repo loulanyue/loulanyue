@@ -1,6 +1,6 @@
 ## 你好，我是 LoulanYue 👋
 
-[![Total Stars](https://img.shields.io/badge/Total%20Stars-1099%20⭐-FFD700?style=for-the-badge&logo=github)](https://github.com/loulanyue)
+[![Total Stars](https://img.shields.io/badge/Total%20Stars-1116%20⭐-FFD700?style=for-the-badge&logo=github)](https://github.com/loulanyue)
 [![Repos](https://img.shields.io/badge/Public%20Repos-10-4A90D9?style=for-the-badge&logo=github)](https://github.com/loulanyue?tab=repositories)
 [![Followers](https://img.shields.io/github/followers/loulanyue?style=for-the-badge&color=4CAF50&logo=github&label=Followers)](https://github.com/loulanyue)
 
