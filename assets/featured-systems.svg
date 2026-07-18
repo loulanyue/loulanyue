@@ -21,8 +21,8 @@
   <rect x="32" y="34" width="5" height="512" rx="2.5" fill="url(#rail)"/>
 
   <g font-family="'Avenir Next', 'PingFang SC', 'Noto Sans CJK SC', ui-sans-serif, sans-serif">
-    <text x="58" y="58" fill="#123E52" font-size="25" font-weight="750" letter-spacing="1.3">01 / FEATURED SYSTEMS</text>
-    <text x="430" y="58" fill="#2A879B" font-size="19" font-weight="700">精选项目</text>
+    <text x="58" y="58" fill="#123E52" font-size="25" font-weight="750" letter-spacing="1.3">02 / ORIGINAL SYSTEMS</text>
+    <text x="430" y="58" fill="#2A879B" font-size="19" font-weight="700">自有项目</text>
     <text x="1142" y="55" text-anchor="end" fill="#789EAB" font-size="10" font-weight="700" letter-spacing="1.8">FIXED LAYOUT · LIVE STARS · BILINGUAL</text>
 
     <g transform="translate(58 88)" filter="url(#shadow)">

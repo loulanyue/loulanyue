@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">LoulanYue upstream open-source contributions</title>
+  <desc id="desc">Verified public pull-request activity and selected merged or active upstream contributions.</desc>
+
+  <defs>
+    <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FCFEFF"/>
+      <stop offset="1" stop-color="#EAF6FA"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#63C6A7"/>
+      <stop offset="1" stop-color="#2A9DB2"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#397E91" flood-opacity=".1"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="650" rx="22" fill="url(#canvas)"/>
+  <rect x="1" y="1" width="1198" height="648" rx="21" fill="none" stroke="#B6D7E2" stroke-width="2"/>
+  <rect x="32" y="34" width="5" height="584" rx="2.5" fill="url(#rail)"/>
+
+  <g font-family="'Avenir Next', 'PingFang SC', 'Noto Sans CJK SC', ui-sans-serif, sans-serif">
+    <text x="58" y="57" fill="#123E52" font-size="25" font-weight="750" letter-spacing="1.3">01 / UPSTREAM IMPACT</text>
+    <text x="440" y="57" fill="#2A879B" font-size="19" font-weight="700">上游贡献</text>
+    <text x="1142" y="54" text-anchor="end" fill="#789EAB" font-size="10" font-weight="700" letter-spacing="1.8">VERIFIED PUBLIC PULL REQUESTS</text>
+
+    <g transform="translate(58 78)">
+      <g>
+        <rect width="258" height="78" rx="14" fill="#FFFFFF" stroke="#D3E8EE"/>
+        <text id="upstream-pr-count" x="28" y="51" fill="#123E52" font-size="31" font-weight="750">12</text>
+        <text x="92" y="34" fill="#2A879B" font-size="10" font-weight="750" letter-spacing="1.3">UPSTREAM PRS</text>
+        <text x="92" y="56" fill="#789EAB" font-size="12">公开上游 PR</text>
+      </g>
+      <g transform="translate(272)">
+        <rect width="258" height="78" rx="14" fill="#FFFFFF" stroke="#D3E8EE"/>
+        <text id="upstream-merged-count" x="28" y="51" fill="#337E69" font-size="31" font-weight="750">1</text>
+        <text x="92" y="34" fill="#2A879B" font-size="10" font-weight="750" letter-spacing="1.3">MERGED</text>
+        <text x="92" y="56" fill="#789EAB" font-size="12">已合并</text>
+      </g>
+      <g transform="translate(544)">
+        <rect width="258" height="78" rx="14" fill="#FFFFFF" stroke="#D3E8EE"/>
+        <text id="upstream-active-count" x="28" y="51" fill="#406E9A" font-size="31" font-weight="750">7</text>
+        <text x="92" y="34" fill="#2A879B" font-size="10" font-weight="750" letter-spacing="1.3">ACTIVE</text>
+        <text x="92" y="56" fill="#789EAB" font-size="12">进行中</text>
+      </g>
+      <g transform="translate(816)">
+        <rect width="268" height="78" rx="14" fill="#FFFFFF" stroke="#D3E8EE"/>
+        <text id="upstream-project-count" x="28" y="51" fill="#123E52" font-size="31" font-weight="750">12</text>
+        <text x="92" y="34" fill="#2A879B" font-size="10" font-weight="750" letter-spacing="1.3">PROJECTS</text>
+        <text x="92" y="56" fill="#789EAB" font-size="12">参与项目</text>
+      </g>
+    </g>
+
+    <g transform="translate(58 176)" filter="url(#shadow)">
+      <rect width="1084" height="90" rx="16" fill="#FFFFFF" stroke="#D3E8EE"/>
+      <rect x="0" width="6" height="90" rx="3" fill="#63C6A7"/>
+      <rect x="20" y="20" width="88" height="28" rx="14" fill="#E5F5EF"/>
+      <text id="state-notebooklm" x="64" y="40" text-anchor="middle" fill="#337E69" font-size="11" font-weight="800" letter-spacing="1">MERGED</text>
+      <text x="132" y="35" fill="#123E52" font-size="20" font-weight="750">teng-lin/notebooklm-py</text>
+      <text x="132" y="64" fill="#648C99" font-size="12" font-weight="650">PR #1974</text>
+      <text id="repo-stars-notebooklm" x="470" y="35" text-anchor="end" fill="#789EAB" font-size="13" font-weight="700">★ 17.9K</text>
+      <path d="M500 16V74" stroke="#D8EAEF"/>
+      <text x="530" y="35" fill="#24566A" font-size="15.5" font-weight="650">修复空会话分类；维护者复验后合并。</text>
+      <text x="530" y="64" fill="#648C99" font-size="14.5">Empty-conversation fix merged after maintainer re-validation.</text>
+    </g>
+
+    <g transform="translate(58 278)" filter="url(#shadow)">
+      <rect width="1084" height="90" rx="16" fill="#F7FCFD" stroke="#D3E8EE"/>
+      <rect x="0" width="6" height="90" rx="3" fill="#2A9DB2"/>
+      <rect x="20" y="20" width="88" height="28" rx="14" fill="#E8F3F8"/>
+      <text id="state-firecrawl" x="64" y="40" text-anchor="middle" fill="#2A7185" font-size="11" font-weight="800" letter-spacing="1">OPEN</text>
+      <text x="132" y="35" fill="#123E52" font-size="20" font-weight="750">firecrawl/firecrawl</text>
+      <text x="132" y="64" fill="#648C99" font-size="12" font-weight="650">PR #4061</text>
+      <text id="repo-stars-firecrawl" x="470" y="35" text-anchor="end" fill="#789EAB" font-size="13" font-weight="700">★ 152.6K</text>
+      <path d="M500 16V74" stroke="#D8EAEF"/>
+      <text x="530" y="35" fill="#24566A" font-size="15.5" font-weight="650">补充 FoundationDB 客户端前置条件，降低安装失败成本。</text>
+      <text x="530" y="64" fill="#648C99" font-size="14.5">Documents the native client prerequisite for reproducible setup.</text>
+    </g>
+
+    <g transform="translate(58 380)" filter="url(#shadow)">
+      <rect width="1084" height="90" rx="16" fill="#FFFFFF" stroke="#D3E8EE"/>
+      <rect x="0" width="6" height="90" rx="3" fill="#4D8FBA"/>
+      <rect x="20" y="20" width="88" height="28" rx="14" fill="#E8F1FA"/>
+      <text id="state-llamafactory" x="64" y="40" text-anchor="middle" fill="#406E9A" font-size="11" font-weight="800" letter-spacing="1">OPEN</text>
+      <text x="132" y="35" fill="#123E52" font-size="20" font-weight="750">hiyouga/LlamaFactory</text>
+      <text x="132" y="64" fill="#648C99" font-size="12" font-weight="650">PR #10660</text>
+      <text id="repo-stars-llamafactory" x="470" y="35" text-anchor="end" fill="#789EAB" font-size="13" font-weight="700">★ 73.4K</text>
+      <path d="M500 16V74" stroke="#D8EAEF"/>
+      <text x="530" y="35" fill="#24566A" font-size="15.5" font-weight="650">修复多模态批处理中的 packed position IDs。</text>
+      <text x="530" y="64" fill="#648C99" font-size="14.5">Fixes packed position IDs in multimodal collation.</text>
+    </g>
+
+    <g transform="translate(58 482)" filter="url(#shadow)">
+      <rect width="1084" height="90" rx="16" fill="#F7FCFD" stroke="#D3E8EE"/>
+      <rect x="0" width="6" height="90" rx="3" fill="#C49435"/>
+      <rect x="20" y="20" width="88" height="28" rx="14" fill="#FFF4D9"/>
+      <text id="state-comfyui" x="64" y="40" text-anchor="middle" fill="#96702B" font-size="11" font-weight="800" letter-spacing="1">OPEN</text>
+      <text x="132" y="35" fill="#123E52" font-size="19" font-weight="750">Comfy-Org/ComfyUI_frontend</text>
+      <text x="132" y="64" fill="#648C99" font-size="12" font-weight="650">PR #13776</text>
+      <text id="repo-stars-comfyui" x="470" y="64" text-anchor="end" fill="#789EAB" font-size="13" font-weight="700">★ 1.9K</text>
+      <path d="M500 16V74" stroke="#D8EAEF"/>
+      <text x="530" y="35" fill="#24566A" font-size="15.5" font-weight="650">避免节点预览物化海量选项，并加入 10k 回归测试。</text>
+      <text x="530" y="64" fill="#648C99" font-size="14.5">Avoids huge preview lists with a 10k-option regression test.</text>
+    </g>
+
+    <text x="58" y="618" fill="#789EAB" font-size="10.5" font-weight="700" letter-spacing="1.5">MERGED + ACTIVE WORK / 已合并与进行中贡献</text>
+    <text x="1142" y="618" text-anchor="end" fill="#789EAB" font-size="10.5">Public PR metrics and statuses refresh daily · 数据与状态每日更新</text>
+  </g>
+</svg>

@@ -5,9 +5,15 @@
 </p>
 
 <p align="center">
-  <strong>把前沿 AI 方法做成可安装、可验证、可维护的开源系统</strong><br />
-  <sub>Turning ambitious AI ideas into installable, testable, and maintainable open-source systems.</sub>
+  <strong>维护自己的开源系统，也向真实上游提交可复现、可审查、可维护的改动</strong><br />
+  <sub>Maintaining original systems while contributing reproducible, reviewable, and maintainable changes upstream.</sub>
 </p>
+
+<p align="center">
+  <img src="./assets/upstream-contributions.svg" width="100%" alt="Verified merged and active upstream pull requests by LoulanYue" />
+</p>
+
+<p align="center"><a href="https://github.com/teng-lin/notebooklm-py/pull/1974"><img alt="notebooklm-py PR 1974" src="https://img.shields.io/badge/notebooklm--py-%231974-54A98E?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/firecrawl/firecrawl/pull/4061"><img alt="firecrawl PR 4061" src="https://img.shields.io/badge/firecrawl-%234061-2A9DB2?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/hiyouga/LlamaFactory/pull/10660"><img alt="LlamaFactory PR 10660" src="https://img.shields.io/badge/LlamaFactory-%2310660-4D8FBA?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/Comfy-Org/ComfyUI_frontend/pull/13776"><img alt="ComfyUI frontend PR 13776" src="https://img.shields.io/badge/ComfyUI_frontend-%2313776-C49435?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a></p>
 
 <p align="center">
   <img src="./assets/featured-systems.svg" width="100%" alt="Four featured LoulanYue projects with bilingual descriptions and live star counts" />

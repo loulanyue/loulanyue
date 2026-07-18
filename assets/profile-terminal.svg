@@ -36,7 +36,7 @@
     <rect x="58" y="152" width="500" height="3" rx="1.5" fill="url(#accent)"/>
     <text x="58" y="188" fill="#0B7185" font-size="20" font-weight="700" letter-spacing="1.7">OPEN-SOURCE SYSTEMS ENGINEER</text>
     <text x="58" y="219" fill="#467688" font-size="17" font-weight="600">开源系统工程 · 规格驱动 · 多智能体协作</text>
-    <text x="58" y="296" fill="#789EAB" font-size="11" font-weight="700" letter-spacing="2">SPECIFY  →  BUILD  →  VERIFY  →  MAINTAIN</text>
+    <text x="58" y="296" fill="#789EAB" font-size="11" font-weight="700" letter-spacing="2">BUILD  →  CONTRIBUTE  →  VERIFY  →  MAINTAIN</text>
   </g>
 
   <g filter="url(#shadow)">
