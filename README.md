@@ -1,27 +1,67 @@
-# LoulanYue
+<p align="center">
+  <img src="./assets/profile-terminal.svg" width="100%" alt="LoulanYue — open source systems engineer" />
+</p>
 
-Open-source maintainer building practical tooling for Spec-Driven Development, multi-agent collaboration, and reliable AI coding workflows.
+<!-- PROFILE_STATS:START -->
+<p align="center">
+  <a href="https://github.com/loulanyue?tab=repositories"><img alt="Total stars across 13 owned public non-fork projects" src="https://img.shields.io/badge/TOTAL_STARS-1%2C339-00E5FF?style=for-the-badge&labelColor=07111F&logo=github&logoColor=FFFFFF" /></a>
+  <a href="https://github.com/loulanyue?tab=repositories"><img alt="13 owned public projects" src="https://img.shields.io/badge/PUBLIC_PROJECTS-13-7CF29A?style=for-the-badge&labelColor=07111F&logo=git&logoColor=FFFFFF" /></a>
+  <a href="https://github.com/loulanyue?tab=followers"><img alt="152 GitHub followers" src="https://img.shields.io/badge/FOLLOWERS-152-F5C451?style=for-the-badge&labelColor=07111F&logo=githubsponsors&logoColor=FFFFFF" /></a>
+</p>
+<!-- PROFILE_STATS:END -->
 
-开源维护者，专注于规格驱动开发、多智能体协作与可复用的 AI 编程工作流。希望把前沿方法整理成开发者能够安装、验证并长期使用的工具。
+## `SYSTEM / ABOUT`
 
-## Featured work
+I build open-source systems that turn ambitious AI ideas into **specified, testable, and maintainable software**.
 
-| Project | What it does |
-| --- | --- |
-| [spec-kit-zh](https://github.com/loulanyue/spec-kit-zh) | 中文规格驱动开发工具包，支持主流 AI coding agents，并持续跟进上游演进。 |
-| [dream-xi-ai](https://github.com/loulanyue/dream-xi-ai) | 面向复杂任务的多智能体协作平台，覆盖规划、执行、评审与风险拦截。 |
-| [awesome-claude-notes](https://github.com/loulanyue/awesome-claude-notes) | 可直接复用的 agents、skills、commands、rules、hooks 与跨平台工作流资产。 |
-| [interview-notes](https://github.com/loulanyue/interview-notes) | 面向后端开发者的结构化技术知识库与实践笔记。 |
+开源维护者，专注于规格驱动开发、多智能体协作和可靠的 AI 编程工作流。我的目标不是堆叠提示词，而是把前沿方法做成开发者能够安装、验证、审查并长期维护的工程系统。
 
-## Current focus
+```text
+INPUT  / ambiguous problem
+PIPE   / specification → agent orchestration → focused implementation
+GATES  / tests → review → reproducible evidence
+OUTPUT / maintainable open-source change
+```
 
-- 让规格驱动开发在真实项目中更容易落地，而不止停留在提示词层面。
-- 构建可验证、可审查、可跨工具迁移的 AI agent 工作流。
-- 改善中文开发者文档、安装体验、版本兼容与上游同步机制。
-- 通过自动化测试、清晰的变更记录和可复现示例提升开源项目可信度。
+## `01 / FEATURED SYSTEMS`
 
-## Engineering and maintenance
+| Signal | Project | System role |
+| :---: | --- | --- |
+| `SPEC` | [**spec-kit-zh**](https://github.com/loulanyue/spec-kit-zh) · ![stars](https://img.shields.io/github/stars/loulanyue/spec-kit-zh?style=flat-square&label=%E2%98%85&color=00B8D9&labelColor=07111F) | 中文规格驱动开发工具包；连接 Codex、Claude Code、Cursor 等 AI coding agents。 |
+| `TEAM` | [**dream-xi-ai**](https://github.com/loulanyue/dream-xi-ai) · ![stars](https://img.shields.io/github/stars/loulanyue/dream-xi-ai?style=flat-square&label=%E2%98%85&color=00B8D9&labelColor=07111F) | 多智能体任务系统；覆盖规划、执行、评审、风险拦截与最终交付。 |
+| `DIST` | [**awesome-claude-notes**](https://github.com/loulanyue/awesome-claude-notes) · ![stars](https://img.shields.io/github/stars/loulanyue/awesome-claude-notes?style=flat-square&label=%E2%98%85&color=00B8D9&labelColor=07111F) | 可复用 agents、skills、commands、hooks 和跨工具工作流的社区发行版。 |
+| `KNOW` | [**interview-notes**](https://github.com/loulanyue/interview-notes) · ![stars](https://img.shields.io/github/stars/loulanyue/interview-notes?style=flat-square&label=%E2%98%85&color=00B8D9&labelColor=07111F) | 面向后端开发者的结构化知识系统与工程实践笔记。 |
 
-主要使用 Java、Python、TypeScript、JavaScript 与 GitHub Actions。我倾向于先明确需求和边界，再提交小而可审查的变更，并为面向用户的变化提供测试、文档和迁移说明。
+## `02 / CURRENT TRANSMISSION`
 
-Issues and pull requests are welcome. For questions or proposals, please use the relevant repository's issue tracker; for security reports, follow that project's `SECURITY.md`.
+- Making Spec-Driven Development practical in real repositories—not just in prompts.
+- Building agent workflows that are reviewable, portable, and safe to operate.
+- Improving Chinese developer documentation, installation paths, compatibility, and upstream sync.
+- Contributing focused fixes with reproduction evidence, tests, and transparent maintenance notes.
+
+<p>
+  <img alt="Java" src="https://img.shields.io/badge/Java-07111F?style=flat-square&logo=openjdk&logoColor=F5C451" />
+  <img alt="Python" src="https://img.shields.io/badge/Python-07111F?style=flat-square&logo=python&logoColor=00E5FF" />
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-07111F?style=flat-square&logo=typescript&logoColor=7CF29A" />
+  <img alt="Rust" src="https://img.shields.io/badge/Rust-07111F?style=flat-square&logo=rust&logoColor=F5C451" />
+  <img alt="Shell" src="https://img.shields.io/badge/Shell-07111F?style=flat-square&logo=gnubash&logoColor=7CF29A" />
+  <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-07111F?style=flat-square&logo=githubactions&logoColor=00E5FF" />
+</p>
+
+## `03 / OPERATING PRINCIPLES`
+
+| `01` | `02` | `03` | `04` |
+| :--- | :--- | :--- | :--- |
+| **Specify first** | **Change narrowly** | **Verify honestly** | **Maintain quietly** |
+| Define behavior and boundaries before implementation. | Prefer small diffs that reviewers can reason about. | Report what actually ran—including failures and limits. | Respond to actionable feedback; never manufacture activity. |
+
+## `04 / OPEN SOURCE LINK`
+
+Issues and pull requests are welcome in the relevant project repository. For security reports, please follow that project's `SECURITY.md` and private disclosure process.
+
+<p align="center">
+  <a href="https://github.com/pulls?q=is%3Apr+author%3Aloulanyue"><img alt="Upstream pull requests" src="https://img.shields.io/badge/UPSTREAM_PULL_REQUESTS-EXPLORE-00E5FF?style=for-the-badge&labelColor=07111F&logo=gitpullrequest&logoColor=FFFFFF" /></a>
+  <a href="https://github.com/loulanyue?tab=repositories"><img alt="Explore all repositories" src="https://img.shields.io/badge/ALL_PROJECTS-OPEN-7CF29A?style=for-the-badge&labelColor=07111F&logo=github&logoColor=FFFFFF" /></a>
+</p>
+
+<sub>Profile telemetry counts owned public, non-fork repositories and refreshes automatically.</sub>
