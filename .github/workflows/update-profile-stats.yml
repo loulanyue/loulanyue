@@ -25,20 +25,20 @@ jobs:
       - name: Check out profile repository
         uses: actions/checkout@v4
 
-      - name: Refresh repository telemetry
+      - name: Refresh profile telemetry assets
         run: node scripts/update-profile-stats.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit changed telemetry
         run: |
-          if git diff --quiet -- README.md; then
+          if git diff --quiet -- assets/profile-terminal.svg assets/featured-systems.svg; then
             echo "Profile telemetry is already current."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add assets/profile-terminal.svg assets/featured-systems.svg
           git commit -m "chore: refresh profile telemetry"
           git push
