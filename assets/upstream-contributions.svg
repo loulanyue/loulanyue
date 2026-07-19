@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="830" viewBox="0 0 1200 830" role="img" aria-labelledby="title desc">
   <title id="title">LoulanYue upstream engineering portfolio</title>
-  <desc id="desc">Six evidence-backed contributions across agent runtimes, visual workflows, model training, developer tooling, and configuration safety.</desc>
+  <desc id="desc">Six evidence-backed contributions protecting system boundaries across agent runtimes, workflows, model training, and developer tooling.</desc>
 
   <defs>
     <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1">
@@ -25,7 +25,7 @@
   <g font-family="'Avenir Next', 'PingFang SC', 'Noto Sans CJK SC', ui-sans-serif, sans-serif">
     <text x="58" y="57" fill="#123E52" font-size="25" font-weight="750" letter-spacing="1.3">01 / UPSTREAM PORTFOLIO</text>
     <text x="460" y="57" fill="#2A879B" font-size="19" font-weight="700">上游工程影响力</text>
-    <text x="1142" y="54" text-anchor="end" fill="#789EAB" font-size="10" font-weight="700" letter-spacing="1.7">EVIDENCE-BACKED CHANGES · LIVE STATUS</text>
+    <text x="1142" y="54" text-anchor="end" fill="#789EAB" font-size="10" font-weight="700" letter-spacing="1.7">EVIDENCE-BACKED SYSTEMS WORK · LIVE STATUS</text>
 
     <g transform="translate(58 78)">
       <g>
@@ -64,11 +64,11 @@
       <text id="state-openclaw" x="56" y="36" text-anchor="middle" fill="#2A7185" font-size="10.5" font-weight="800" letter-spacing="1">OPEN</text>
       <text x="108" y="36" fill="#789EAB" font-size="9.5" font-weight="750" letter-spacing="1.5">ONBOARDING PATH</text>
       <text x="20" y="74" fill="#123E52" font-size="21" font-weight="750">openclaw/openclaw</text>
-      <text id="repo-stars-openclaw" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 383.4K</text>
+      <text id="repo-stars-openclaw" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 383.5K</text>
       <text x="20" y="98" fill="#648C99" font-size="11.5" font-weight="650">PR #111352</text>
       <path d="M20 111H506" stroke="#DCECF1"/>
-      <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">打通 macOS 下载与首次上手路径，减少关键入口断层。</text>
-      <text x="20" y="161" fill="#648C99" font-size="11.6">Completes the macOS path from canonical download to onboarding.</text>
+      <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">把首次使用路径纳入智能体系统可靠性，消除能力可达性断层。</text>
+      <text x="20" y="161" fill="#648C99" font-size="11.6">Treats first-run accessibility as part of agent-system reliability.</text>
     </g>
 
     <g transform="translate(616 198)" filter="url(#shadow)">
@@ -81,8 +81,8 @@
       <text id="repo-stars-opencode" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 187.4K</text>
       <text x="20" y="98" fill="#648C99" font-size="11.5" font-weight="650">PR #37726</text>
       <path d="M20 111H506" stroke="#DCECF1"/>
-      <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">让打包 CLI 正确携带原生监听器，恢复实时开发反馈。</text>
-      <text x="20" y="161" fill="#648C99" font-size="11.6">Restores native file watching in packaged macOS CLI builds.</text>
+      <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">补齐 AI 编程运行时的原生能力边界，统一源码与发行体验。</text>
+      <text x="20" y="161" fill="#648C99" font-size="11.6">Preserves runtime capability across source, package, and experience.</text>
     </g>
 
     <g transform="translate(58 390)" filter="url(#shadow)">
@@ -95,8 +95,8 @@
       <text id="repo-stars-langflow" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 152.0K</text>
       <text x="20" y="98" fill="#648C99" font-size="11.5" font-weight="650">PR #14153</text>
       <path d="M20 111H506" stroke="#DCECF1"/>
-      <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">隔离展示层脱敏与数据流，兼顾机密安全和组件可用性。</text>
-      <text x="20" y="161" fill="#648C99" font-size="11.6">Separates display masking from executable workflow state.</text>
+      <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">划清安全展示与执行状态的边界，让机密保护不破坏工作流语义。</text>
+      <text x="20" y="161" fill="#648C99" font-size="11.6">Separates secure presentation from executable workflow semantics.</text>
     </g>
 
     <g transform="translate(616 390)" filter="url(#shadow)">
@@ -109,8 +109,8 @@
       <text id="repo-stars-llamafactory" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 73.4K</text>
       <text x="20" y="98" fill="#648C99" font-size="11.5" font-weight="650">PR #10660</text>
       <path d="M20 111H506" stroke="#DCECF1"/>
-      <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">对齐多模态打包批次的位置编码，守住模型输入契约。</text>
-      <text x="20" y="161" fill="#648C99" font-size="11.6">Aligns packed multimodal positions with padded model inputs.</text>
+      <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">守住多模态训练的数据契约，让复杂批处理保持模型级一致性。</text>
+      <text x="20" y="161" fill="#648C99" font-size="11.6">Protects model data contracts across complex multimodal batching.</text>
     </g>
 
     <g transform="translate(58 582)" filter="url(#shadow)">
@@ -123,8 +123,8 @@
       <text id="repo-stars-poetry" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 34.3K</text>
       <text x="20" y="98" fill="#648C99" font-size="11.5" font-weight="650">PR #10983</text>
       <path d="M20 111H506" stroke="#DCECF1"/>
-      <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">收敛环境测试基础设施，同时保留跨平台行为语义。</text>
-      <text x="20" y="161" fill="#648C99" font-size="11.6">Consolidates test infrastructure without erasing platform semantics.</text>
+      <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">以共享测试基础设施承载平台差异，降低维护成本而不牺牲语义。</text>
+      <text x="20" y="161" fill="#648C99" font-size="11.6">Encodes platform variance in shared tests without semantic loss.</text>
     </g>
 
     <g transform="translate(616 582)" filter="url(#shadow)">
@@ -137,8 +137,8 @@
       <text id="repo-stars-mcptoolbox" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 16.0K</text>
       <text x="20" y="98" fill="#648C99" font-size="11.5" font-weight="650">PR #3650</text>
       <path d="M20 111H506" stroke="#DCECF1"/>
-      <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">建立配置唯一性约束，让重复定义在部署前可定位地失败。</text>
-      <text x="20" y="161" fill="#648C99" font-size="11.6">Makes duplicate flat-config primitives fail early with locations.</text>
+      <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">把配置唯一性提升为可诊断契约，在系统启动前阻断歧义。</text>
+      <text x="20" y="161" fill="#648C99" font-size="11.6">Turns configuration uniqueness into a diagnosable pre-runtime contract.</text>
     </g>
 
     <text x="58" y="798" fill="#789EAB" font-size="10.5" font-weight="700" letter-spacing="1.5">RUNTIME → WORKFLOW → TRAINING → TOOLING / 从运行时到工具链</text>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
-  <title id="title">LoulanYue open-source systems engineer</title>
-  <desc id="desc">A light ice-blue bilingual profile console with live GitHub project, star, and follower telemetry.</desc>
+  <title id="title">LoulanYue open-source AI systems engineer</title>
+  <desc id="desc">A light bilingual systems console positioning open infrastructure for the agentic era with live GitHub telemetry.</desc>
 
   <defs>
     <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1">
@@ -31,12 +31,12 @@
   <circle cx="642" cy="246" r="4" fill="#63C6A7"/>
 
   <g font-family="'Avenir Next', 'PingFang SC', 'Noto Sans CJK SC', ui-sans-serif, sans-serif">
-    <text x="58" y="51" fill="#2A879B" font-size="13" font-weight="700" letter-spacing="3">[ PUBLIC NODE / OSS-01 ]</text>
+    <text x="58" y="51" fill="#2A879B" font-size="13" font-weight="700" letter-spacing="3">[ OPEN SYSTEMS / OSS-01 ]</text>
     <text x="58" y="132" fill="#123E52" font-size="66" font-weight="700" letter-spacing="5">LOULANYUE</text>
     <rect x="58" y="152" width="500" height="3" rx="1.5" fill="url(#accent)"/>
-    <text x="58" y="188" fill="#0B7185" font-size="20" font-weight="700" letter-spacing="1.7">OPEN-SOURCE SYSTEMS ENGINEER</text>
-    <text x="58" y="219" fill="#467688" font-size="17" font-weight="600">开源系统工程 · 规格驱动 · 多智能体协作</text>
-    <text x="58" y="296" fill="#789EAB" font-size="11" font-weight="700" letter-spacing="2">BUILD  →  CONTRIBUTE  →  VERIFY  →  MAINTAIN</text>
+    <text x="58" y="188" fill="#0B7185" font-size="20" font-weight="700" letter-spacing="1.7">OPEN-SOURCE AI SYSTEMS ENGINEER</text>
+    <text x="58" y="219" fill="#467688" font-size="17" font-weight="600">面向智能体时代的开放系统工程 · 规格 · 运行时 · 可信交付</text>
+    <text x="58" y="296" fill="#789EAB" font-size="11" font-weight="700" letter-spacing="2">DESIGN  →  CONTRIBUTE  →  VERIFY  →  STEWARD</text>
   </g>
 
   <g filter="url(#shadow)">
@@ -49,7 +49,7 @@
 
     <g transform="translate(720 96)">
       <rect width="126" height="120" rx="14" fill="#F2FAFC" stroke="#D4E9EF"/>
-      <text id="total-stars" x="63" y="55" text-anchor="middle" fill="#123E52" font-size="31" font-weight="750">1,385</text>
+      <text id="total-stars" x="63" y="55" text-anchor="middle" fill="#123E52" font-size="31" font-weight="750">1,395</text>
       <text x="63" y="82" text-anchor="middle" fill="#2A879B" font-size="10" font-weight="700" letter-spacing="1.4">TOTAL STARS</text>
       <text x="63" y="101" text-anchor="middle" fill="#789EAB" font-size="11">总星标</text>
     </g>

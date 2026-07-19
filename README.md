@@ -1,12 +1,12 @@
 <p align="center">
   <a href="https://github.com/loulanyue?tab=repositories">
-    <img src="./assets/profile-terminal.svg" width="100%" alt="LoulanYue — bilingual open-source systems engineer profile with live telemetry" />
+    <img src="./assets/profile-terminal.svg" width="100%" alt="LoulanYue — bilingual open-source AI systems engineering profile with live telemetry" />
   </a>
 </p>
 
 <p align="center">
-  <strong>跨越智能体运行时、可视化工作流、模型训练与开发者工具，把可复现证据转化为可维护的上游改动</strong><br />
-  <sub>Turning reproducible evidence into maintainable upstream changes across agent runtimes, visual workflows, model training, and developer tooling.</sub>
+  <strong>构建面向智能体时代的开放基础设施，让规格、运行时、工作流与模型工程形成可演进的系统</strong><br />
+  <sub>Building open infrastructure for the agentic era—where specifications, runtimes, workflows, and model engineering evolve as one system.</sub>
 </p>
 
 <p align="center">
@@ -21,11 +21,11 @@
 
 <p align="center"><a href="https://github.com/loulanyue/spec-kit-zh"><img alt="Open spec-kit-zh" src="https://img.shields.io/badge/spec--kit--zh-OPEN-2A9DB2?style=flat-square&labelColor=EAF6FA&logo=github&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/loulanyue/dream-xi-ai"><img alt="Open dream-xi-ai" src="https://img.shields.io/badge/dream--xi--ai-OPEN-2A9DB2?style=flat-square&labelColor=EAF6FA&logo=github&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/loulanyue/awesome-claude-notes"><img alt="Open awesome-claude-notes" src="https://img.shields.io/badge/awesome--claude--notes-OPEN-2A9DB2?style=flat-square&labelColor=EAF6FA&logo=github&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/loulanyue/interview-notes"><img alt="Open interview-notes" src="https://img.shields.io/badge/interview--notes-OPEN-2A9DB2?style=flat-square&labelColor=EAF6FA&logo=github&logoColor=0B5C75" /></a></p>
 
-## `FOCUS / 当前方向`
+## `SYSTEMS THESIS / 系统主张`
 
 ```text
-ZH  智能体运行时 · AI 工作流可靠性 · 多模态训练 · 开发者工具链 · 证据驱动开源
-EN  Agent runtimes · AI workflow integrity · Multimodal training · Developer tooling · Evidence-led OSS
+ZH  以开放基础设施连接规格、智能体、工作流与模型工程，让复杂 AI 系统可理解、可验证、可演进
+EN  Open infrastructure connecting specifications, agents, workflows, and model engineering—so complex AI systems stay legible, verifiable, and evolvable
 ```
 
 <p>
@@ -37,10 +37,10 @@ EN  Agent runtimes · AI workflow integrity · Multimodal training · Developer 
   <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-EAF6FA?style=flat-square&logo=githubactions&logoColor=0B7185" />
 </p>
 
-## `PRINCIPLES / 工程原则`
+## `OPERATING PRINCIPLES / 工程原则`
 
 ```text
-01  SPECIFY FIRST / 规格先行    02  CHANGE NARROWLY / 小步修改    03  VERIFY HONESTLY / 真实验证    04  MAINTAIN QUIETLY / 安静维护
+01  THINK IN SYSTEMS / 系统思考    02  GROUND IN EVIDENCE / 证据驱动    03  DESIGN FOR REVIEW / 面向审查    04  MAINTAIN FOR LONGEVITY / 长期维护
 ```
 
 <p align="center">
