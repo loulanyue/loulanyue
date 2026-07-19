@@ -28,13 +28,13 @@
     <g transform="translate(58 78)">
       <g>
         <rect width="258" height="78" rx="14" fill="#FFFFFF" stroke="#D3E8EE"/>
-        <text id="upstream-pr-count" x="28" y="51" fill="#123E52" font-size="31" font-weight="750">12</text>
+        <text id="upstream-pr-count" x="28" y="51" fill="#123E52" font-size="31" font-weight="750">13</text>
         <text x="92" y="34" fill="#2A879B" font-size="10" font-weight="750" letter-spacing="1.3">UPSTREAM PRS</text>
         <text x="92" y="56" fill="#789EAB" font-size="12">公开上游 PR</text>
       </g>
       <g transform="translate(272)">
         <rect width="258" height="78" rx="14" fill="#FFFFFF" stroke="#D3E8EE"/>
-        <text id="upstream-merged-count" x="28" y="51" fill="#337E69" font-size="31" font-weight="750">1</text>
+        <text id="upstream-merged-count" x="28" y="51" fill="#337E69" font-size="31" font-weight="750">2</text>
         <text x="92" y="34" fill="#2A879B" font-size="10" font-weight="750" letter-spacing="1.3">MERGED</text>
         <text x="92" y="56" fill="#789EAB" font-size="12">已合并</text>
       </g>
@@ -72,7 +72,7 @@
       <text id="state-firecrawl" x="64" y="40" text-anchor="middle" fill="#2A7185" font-size="11" font-weight="800" letter-spacing="1">OPEN</text>
       <text x="132" y="35" fill="#123E52" font-size="20" font-weight="750">firecrawl/firecrawl</text>
       <text x="132" y="64" fill="#648C99" font-size="12" font-weight="650">PR #4061</text>
-      <text id="repo-stars-firecrawl" x="470" y="35" text-anchor="end" fill="#789EAB" font-size="13" font-weight="700">★ 152.6K</text>
+      <text id="repo-stars-firecrawl" x="470" y="35" text-anchor="end" fill="#789EAB" font-size="13" font-weight="700">★ 152.9K</text>
       <path d="M500 16V74" stroke="#D8EAEF"/>
       <text x="530" y="35" fill="#24566A" font-size="15.5" font-weight="650">补充 FoundationDB 客户端前置条件，降低安装失败成本。</text>
       <text x="530" y="64" fill="#648C99" font-size="14.5">Documents the native client prerequisite for reproducible setup.</text>
