@@ -5,15 +5,15 @@
 </p>
 
 <p align="center">
-  <strong>维护自己的开源系统，也向真实上游提交可复现、可审查、可维护的改动</strong><br />
-  <sub>Maintaining original systems while contributing reproducible, reviewable, and maintainable changes upstream.</sub>
+  <strong>跨越智能体运行时、可视化工作流、模型训练与开发者工具，把可复现证据转化为可维护的上游改动</strong><br />
+  <sub>Turning reproducible evidence into maintainable upstream changes across agent runtimes, visual workflows, model training, and developer tooling.</sub>
 </p>
 
 <p align="center">
-  <img src="./assets/upstream-contributions.svg" width="100%" alt="Verified merged and active upstream pull requests by LoulanYue" />
+  <img src="./assets/upstream-contributions.svg" width="100%" alt="Six evidence-backed upstream contributions by LoulanYue across the AI engineering toolchain" />
 </p>
 
-<p align="center"><a href="https://github.com/teng-lin/notebooklm-py/pull/1974"><img alt="notebooklm-py PR 1974" src="https://img.shields.io/badge/notebooklm--py-%231974-54A98E?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/firecrawl/firecrawl/pull/4061"><img alt="firecrawl PR 4061" src="https://img.shields.io/badge/firecrawl-%234061-2A9DB2?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/hiyouga/LlamaFactory/pull/10660"><img alt="LlamaFactory PR 10660" src="https://img.shields.io/badge/LlamaFactory-%2310660-4D8FBA?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/Comfy-Org/ComfyUI_frontend/pull/13776"><img alt="ComfyUI frontend PR 13776" src="https://img.shields.io/badge/ComfyUI_frontend-%2313776-C49435?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a></p>
+<p align="center"><a href="https://github.com/openclaw/openclaw/pull/111352"><img alt="OpenClaw PR 111352" src="https://img.shields.io/badge/OpenClaw-%23111352-2A9DB2?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/anomalyco/opencode/pull/37726"><img alt="opencode PR 37726" src="https://img.shields.io/badge/opencode-%2337726-337E69?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/langflow-ai/langflow/pull/14153"><img alt="Langflow PR 14153" src="https://img.shields.io/badge/Langflow-%2314153-4D8FBA?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/hiyouga/LlamaFactory/pull/10660"><img alt="LlamaFactory PR 10660" src="https://img.shields.io/badge/LlamaFactory-%2310660-5D86B3?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/python-poetry/poetry/pull/10983"><img alt="Poetry PR 10983" src="https://img.shields.io/badge/Poetry-%2310983-6B8F9D?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/googleapis/mcp-toolbox/pull/3650"><img alt="MCP Toolbox PR 3650" src="https://img.shields.io/badge/MCP_Toolbox-%233650-C49435?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a></p>
 
 <p align="center">
   <img src="./assets/featured-systems.svg" width="100%" alt="Four featured LoulanYue projects with bilingual descriptions and live star counts" />
@@ -24,8 +24,8 @@
 ## `FOCUS / 当前方向`
 
 ```text
-ZH  规格驱动开发 · 多智能体协作 · 可靠的 AI 编程工作流 · 高质量开源维护
-EN  Spec-driven development · Multi-agent delivery · Reliable AI coding · Evidence-led maintenance
+ZH  智能体运行时 · AI 工作流可靠性 · 多模态训练 · 开发者工具链 · 证据驱动开源
+EN  Agent runtimes · AI workflow integrity · Multimodal training · Developer tooling · Evidence-led OSS
 ```
 
 <p>

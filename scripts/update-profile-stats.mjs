@@ -18,10 +18,12 @@ const featuredRepositories = [
 ];
 
 const upstreamContributions = [
-  { key: 'notebooklm', owner: 'teng-lin', repo: 'notebooklm-py', pull: 1974 },
-  { key: 'firecrawl', owner: 'firecrawl', repo: 'firecrawl', pull: 4061 },
+  { key: 'openclaw', owner: 'openclaw', repo: 'openclaw', pull: 111352 },
+  { key: 'opencode', owner: 'anomalyco', repo: 'opencode', pull: 37726 },
+  { key: 'langflow', owner: 'langflow-ai', repo: 'langflow', pull: 14153 },
   { key: 'llamafactory', owner: 'hiyouga', repo: 'LlamaFactory', pull: 10660 },
-  { key: 'comfyui', owner: 'Comfy-Org', repo: 'ComfyUI_frontend', pull: 13776 },
+  { key: 'poetry', owner: 'python-poetry', repo: 'poetry', pull: 10983 },
+  { key: 'mcptoolbox', owner: 'googleapis', repo: 'mcp-toolbox', pull: 3650 },
 ];
 
 const headers = {
