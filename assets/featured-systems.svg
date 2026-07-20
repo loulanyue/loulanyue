@@ -74,6 +74,6 @@
     </g>
 
     <text x="58" y="552" fill="#789EAB" font-size="10.5" font-weight="700" letter-spacing="1.5">NO TABLE REFLOW / 无表格重排</text>
-    <text x="1142" y="552" text-anchor="end" fill="#789EAB" font-size="10.5">Stars refresh automatically via GitHub Actions · 星标每日自动更新</text>
+    <text id="last-updated-featured" x="1142" y="552" text-anchor="end" fill="#789EAB" font-size="10.5">LIVE STARS · UPDATED 2026-07-20 UTC · 星标自动更新</text>
   </g>
 </svg>

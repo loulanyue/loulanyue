@@ -129,6 +129,7 @@ const projectCount = projects.length;
 const followerCount = profile.followers;
 const formattedStars = totalStars.toLocaleString('en-US');
 const formattedFollowers = followerCount.toLocaleString('en-US');
+const refreshedOn = new Date().toISOString().slice(0, 10);
 
 const upstreamMergedCount = upstreamSearch.items.filter(
   (item) => Boolean(item.pull_request?.merged_at),
@@ -142,12 +143,22 @@ let nextBanner = currentBanner;
 nextBanner = replaceTextById(nextBanner, 'total-stars', formattedStars);
 nextBanner = replaceTextById(nextBanner, 'project-count', String(projectCount));
 nextBanner = replaceTextById(nextBanner, 'follower-count', formattedFollowers);
+nextBanner = replaceTextById(
+  nextBanner,
+  'last-updated-banner',
+  `UPDATED ${refreshedOn} UTC`,
+);
 
 let nextFeatured = currentFeatured;
 for (const name of featuredRepositories) {
   const stars = repositoryByName.get(name).stargazers_count.toLocaleString('en-US');
   nextFeatured = replaceTextById(nextFeatured, `stars-${name}`, `★ ${stars}`);
 }
+nextFeatured = replaceTextById(
+  nextFeatured,
+  'last-updated-featured',
+  `LIVE STARS · UPDATED ${refreshedOn} UTC · 星标自动更新`,
+);
 
 let nextUpstream = currentUpstream;
 nextUpstream = replaceTextById(
@@ -169,6 +180,11 @@ nextUpstream = replaceTextById(
   nextUpstream,
   'upstream-project-count',
   String(upstreamProjectCount),
+);
+nextUpstream = replaceTextById(
+  nextUpstream,
+  'last-updated-upstream',
+  `PR STATUS + STARS · UPDATED ${refreshedOn} UTC · 每日自动更新`,
 );
 
 for (const contribution of contributionDetails) {

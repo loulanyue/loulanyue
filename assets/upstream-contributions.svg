@@ -142,6 +142,6 @@
     </g>
 
     <text x="58" y="798" fill="#789EAB" font-size="10.5" font-weight="700" letter-spacing="1.5">RUNTIME → WORKFLOW → TRAINING → TOOLING / 从运行时到工具链</text>
-    <text x="1142" y="798" text-anchor="end" fill="#789EAB" font-size="10.5">Public PR metrics, states and stars refresh daily · 公开数据每日更新</text>
+    <text id="last-updated-upstream" x="1142" y="798" text-anchor="end" fill="#789EAB" font-size="10.5">PR STATUS + STARS · UPDATED 2026-07-20 UTC · 每日自动更新</text>
   </g>
 </svg>
