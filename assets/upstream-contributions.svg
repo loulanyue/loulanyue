@@ -78,7 +78,7 @@
       <text id="state-opencode" x="56" y="36" text-anchor="middle" fill="#337E69" font-size="10.5" font-weight="800" letter-spacing="1">OPEN</text>
       <text x="108" y="36" fill="#789EAB" font-size="9.5" font-weight="750" letter-spacing="1.5">CLI RUNTIME</text>
       <text x="20" y="74" fill="#123E52" font-size="21" font-weight="750">anomalyco/opencode</text>
-      <text id="repo-stars-opencode" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 187.5K</text>
+      <text id="repo-stars-opencode" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 187.6K</text>
       <text x="20" y="98" fill="#648C99" font-size="11.5" font-weight="650">PR #37726</text>
       <path d="M20 111H506" stroke="#DCECF1"/>
       <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">补齐 AI 编程运行时的原生能力边界，统一源码与发行体验。</text>
@@ -92,7 +92,7 @@
       <text id="state-langflow" x="56" y="36" text-anchor="middle" fill="#406E9A" font-size="10.5" font-weight="800" letter-spacing="1">OPEN</text>
       <text x="108" y="36" fill="#789EAB" font-size="9.5" font-weight="750" letter-spacing="1.5">WORKFLOW STATE</text>
       <text x="20" y="74" fill="#123E52" font-size="21" font-weight="750">langflow-ai/langflow</text>
-      <text id="repo-stars-langflow" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 152.0K</text>
+      <text id="repo-stars-langflow" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 152.1K</text>
       <text x="20" y="98" fill="#648C99" font-size="11.5" font-weight="650">PR #14153</text>
       <path d="M20 111H506" stroke="#DCECF1"/>
       <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">划清安全展示与执行状态的边界，让机密保护不破坏工作流语义。</text>
