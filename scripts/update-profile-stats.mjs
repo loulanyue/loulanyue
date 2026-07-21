@@ -18,7 +18,7 @@ const featuredRepositories = [
 ];
 
 const upstreamContributions = [
-  { key: 'openclaw', owner: 'openclaw', repo: 'openclaw', pull: 111352 },
+  { key: 'openclaw', owner: 'openclaw', repo: 'openclaw', pull: 111779 },
   { key: 'opencode', owner: 'anomalyco', repo: 'opencode', pull: 37726 },
   { key: 'langflow', owner: 'langflow-ai', repo: 'langflow', pull: 14153 },
   { key: 'llamafactory', owner: 'hiyouga', repo: 'LlamaFactory', pull: 10660 },
