@@ -37,7 +37,7 @@
     <text x="58" y="188" fill="#0B7185" font-size="20" font-weight="700" letter-spacing="1.7">OPEN-SOURCE AI SYSTEMS ENGINEER</text>
     <text x="58" y="219" fill="#467688" font-size="17" font-weight="600">面向智能体时代的开放系统工程 · 规格 · 运行时 · 可信交付</text>
     <text x="58" y="296" fill="#789EAB" font-size="11" font-weight="700" letter-spacing="2">DESIGN  →  CONTRIBUTE  →  VERIFY  →  STEWARD</text>
-    <text id="last-updated-banner" x="1142" y="296" text-anchor="end" fill="#789EAB" font-size="10.5" font-weight="700" letter-spacing="1.4">UPDATED 2026-07-21 UTC</text>
+    <text id="last-updated-banner" x="1142" y="296" text-anchor="end" fill="#789EAB" font-size="10.5" font-weight="700" letter-spacing="1.4">UPDATED 2026-07-22 UTC</text>
   </g>
 
   <g filter="url(#shadow)">
@@ -50,7 +50,7 @@
 
     <g transform="translate(720 96)">
       <rect width="126" height="120" rx="14" fill="#F2FAFC" stroke="#D4E9EF"/>
-      <text id="total-stars" x="63" y="55" text-anchor="middle" fill="#123E52" font-size="31" font-weight="750">1,432</text>
+      <text id="total-stars" x="63" y="55" text-anchor="middle" fill="#123E52" font-size="31" font-weight="750">1,433</text>
       <text x="63" y="82" text-anchor="middle" fill="#2A879B" font-size="10" font-weight="700" letter-spacing="1.4">TOTAL STARS</text>
       <text x="63" y="101" text-anchor="middle" fill="#789EAB" font-size="11">总星标</text>
     </g>

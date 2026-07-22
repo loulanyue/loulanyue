@@ -78,7 +78,7 @@
       <text id="state-opencode" x="56" y="36" text-anchor="middle" fill="#337E69" font-size="10.5" font-weight="800" letter-spacing="1">OPEN</text>
       <text x="108" y="36" fill="#789EAB" font-size="9.5" font-weight="750" letter-spacing="1.5">CLI RUNTIME</text>
       <text x="20" y="74" fill="#123E52" font-size="21" font-weight="750">anomalyco/opencode</text>
-      <text id="repo-stars-opencode" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 188.2K</text>
+      <text id="repo-stars-opencode" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 188.3K</text>
       <text x="20" y="98" fill="#648C99" font-size="11.5" font-weight="650">PR #37726</text>
       <path d="M20 111H506" stroke="#DCECF1"/>
       <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">补齐 AI 编程运行时的原生能力边界，统一源码与发行体验。</text>
@@ -142,6 +142,6 @@
     </g>
 
     <text x="58" y="798" fill="#789EAB" font-size="10.5" font-weight="700" letter-spacing="1.5">RUNTIME → WORKFLOW → TRAINING → TOOLING / 从运行时到工具链</text>
-    <text id="last-updated-upstream" x="1142" y="798" text-anchor="end" fill="#789EAB" font-size="10.5">PR STATUS + STARS · UPDATED 2026-07-21 UTC · 每日自动更新</text>
+    <text id="last-updated-upstream" x="1142" y="798" text-anchor="end" fill="#789EAB" font-size="10.5">PR STATUS + STARS · UPDATED 2026-07-22 UTC · 每日自动更新</text>
   </g>
 </svg>
