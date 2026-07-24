@@ -31,7 +31,7 @@
       <text x="54" y="47" text-anchor="middle" fill="#0B7185" font-size="12" font-weight="800" letter-spacing="1.2">SPEC</text>
       <text x="112" y="43" fill="#123E52" font-size="22" font-weight="750">spec-kit-zh</text>
       <rect x="390" y="22" width="86" height="38" rx="12" fill="#2A9DB2"/>
-      <text id="stars-spec-kit-zh" x="433" y="47" text-anchor="middle" fill="#FFFFFF" font-size="16" font-weight="750">★ 328</text>
+      <text id="stars-spec-kit-zh" x="433" y="47" text-anchor="middle" fill="#FFFFFF" font-size="16" font-weight="750">★ 329</text>
       <path d="M510 18V80" stroke="#D8EAEF"/>
       <text x="540" y="39" fill="#24566A" font-size="15.5" font-weight="650">把规格、上下文与智能体协作编排为可复用的开放工程协议。</text>
       <text x="540" y="68" fill="#648C99" font-size="14.5">Open protocol for specifications, context, and agent collaboration.</text>
@@ -43,7 +43,7 @@
       <text x="54" y="47" text-anchor="middle" fill="#337E69" font-size="12" font-weight="800" letter-spacing="1.2">TEAM</text>
       <text x="112" y="43" fill="#123E52" font-size="22" font-weight="750">dream-xi-ai</text>
       <rect x="390" y="22" width="86" height="38" rx="12" fill="#54A98E"/>
-      <text id="stars-dream-xi-ai" x="433" y="47" text-anchor="middle" fill="#FFFFFF" font-size="16" font-weight="750">★ 353</text>
+      <text id="stars-dream-xi-ai" x="433" y="47" text-anchor="middle" fill="#FFFFFF" font-size="16" font-weight="750">★ 354</text>
       <path d="M510 18V80" stroke="#D8EAEF"/>
       <text x="540" y="39" fill="#24566A" font-size="15.5" font-weight="650">面向复杂交付的多智能体控制面，统一规划、执行、验证与风险治理。</text>
       <text x="540" y="68" fill="#648C99" font-size="14.5">Control plane for multi-agent planning, execution, verification, and risk.</text>
@@ -55,7 +55,7 @@
       <text x="54" y="47" text-anchor="middle" fill="#406E9A" font-size="12" font-weight="800" letter-spacing="1.2">DIST</text>
       <text x="112" y="43" fill="#123E52" font-size="20" font-weight="750">awesome-claude-notes</text>
       <rect x="390" y="22" width="86" height="38" rx="12" fill="#4D8FBA"/>
-      <text id="stars-awesome-claude-notes" x="433" y="47" text-anchor="middle" fill="#FFFFFF" font-size="16" font-weight="750">★ 263</text>
+      <text id="stars-awesome-claude-notes" x="433" y="47" text-anchor="middle" fill="#FFFFFF" font-size="16" font-weight="750">★ 264</text>
       <path d="M510 18V80" stroke="#D8EAEF"/>
       <text x="540" y="39" fill="#24566A" font-size="15.5" font-weight="650">沉淀可移植的智能体能力层，跨工具复用角色、技能与工作流。</text>
       <text x="540" y="68" fill="#648C99" font-size="14.5">Portable capability layer for agents, skills, and cross-tool workflows.</text>
@@ -67,7 +67,7 @@
       <text x="54" y="47" text-anchor="middle" fill="#96702B" font-size="12" font-weight="800" letter-spacing="1.2">KNOW</text>
       <text x="112" y="43" fill="#123E52" font-size="22" font-weight="750">interview-notes</text>
       <rect x="390" y="22" width="86" height="38" rx="12" fill="#C49435"/>
-      <text id="stars-interview-notes" x="433" y="47" text-anchor="middle" fill="#FFFFFF" font-size="16" font-weight="750">★ 301</text>
+      <text id="stars-interview-notes" x="433" y="47" text-anchor="middle" fill="#FFFFFF" font-size="16" font-weight="750">★ 302</text>
       <path d="M510 18V80" stroke="#D8EAEF"/>
       <text x="540" y="39" fill="#24566A" font-size="15.5" font-weight="650">将后端知识重构为面向判断、设计与演进的工程决策系统。</text>
       <text x="540" y="68" fill="#648C99" font-size="14.5">Backend knowledge organized for engineering judgment, design, and evolution.</text>
