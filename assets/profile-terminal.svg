@@ -50,7 +50,7 @@
 
     <g transform="translate(720 96)">
       <rect width="126" height="120" rx="14" fill="#F2FAFC" stroke="#D4E9EF"/>
-      <text id="total-stars" x="63" y="55" text-anchor="middle" fill="#123E52" font-size="31" font-weight="750">1,830</text>
+      <text id="total-stars" x="63" y="55" text-anchor="middle" fill="#123E52" font-size="31" font-weight="750">2,130</text>
       <text x="63" y="82" text-anchor="middle" fill="#2A879B" font-size="10" font-weight="700" letter-spacing="1.4">TOTAL STARS</text>
       <text x="63" y="101" text-anchor="middle" fill="#789EAB" font-size="11">总星标</text>
     </g>
