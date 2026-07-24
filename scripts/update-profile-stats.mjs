@@ -18,9 +18,9 @@ const featuredRepositories = [
 ];
 
 const upstreamContributions = [
-  { key: 'openclaw', owner: 'openclaw', repo: 'openclaw', pull: 111779 },
+  { key: 'openclaw', owner: 'openclaw', repo: 'openclaw', pull: 112478 },
   { key: 'opencode', owner: 'anomalyco', repo: 'opencode', pull: 37726 },
-  { key: 'langflow', owner: 'langflow-ai', repo: 'langflow', pull: 14153 },
+  { key: 'langflow', owner: 'langflow-ai', repo: 'langflow', pull: 14177 },
   { key: 'llamafactory', owner: 'hiyouga', repo: 'LlamaFactory', pull: 10660 },
   { key: 'poetry', owner: 'python-poetry', repo: 'poetry', pull: 10983 },
   { key: 'mcptoolbox', owner: 'googleapis', repo: 'mcp-toolbox', pull: 3650 },
