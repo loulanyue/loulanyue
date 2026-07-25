@@ -10,16 +10,16 @@
 </p>
 
 <p align="center">
-  <img src="./assets/upstream-contributions.svg" width="100%" alt="Six evidence-backed upstream contributions by LoulanYue across the AI engineering toolchain" />
-</p>
-
-<p align="center"><a href="https://github.com/openclaw/openclaw/pull/112478"><img alt="OpenClaw PR 112478" src="https://img.shields.io/badge/OpenClaw-%23112478-54A98E?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/anomalyco/opencode/pull/37726"><img alt="opencode PR 37726" src="https://img.shields.io/badge/opencode-%2337726-337E69?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/langflow-ai/langflow/pull/14177"><img alt="Langflow PR 14177" src="https://img.shields.io/badge/Langflow-%2314177-4D8FBA?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/hiyouga/LlamaFactory/pull/10660"><img alt="LlamaFactory PR 10660" src="https://img.shields.io/badge/LlamaFactory-%2310660-5D86B3?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/python-poetry/poetry/pull/10983"><img alt="Poetry PR 10983" src="https://img.shields.io/badge/Poetry-%2310983-6B8F9D?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/googleapis/mcp-toolbox/pull/3650"><img alt="MCP Toolbox PR 3650" src="https://img.shields.io/badge/MCP_Toolbox-%233650-C49435?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a></p>
-
-<p align="center">
   <img src="./assets/featured-systems.svg" width="100%" alt="Four featured LoulanYue projects with bilingual descriptions and live star counts" />
 </p>
 
 <p align="center"><a href="https://github.com/loulanyue/spec-kit-zh"><img alt="Open spec-kit-zh" src="https://img.shields.io/badge/spec--kit--zh-OPEN-2A9DB2?style=flat-square&labelColor=EAF6FA&logo=github&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/loulanyue/dream-xi-ai"><img alt="Open dream-xi-ai" src="https://img.shields.io/badge/dream--xi--ai-OPEN-2A9DB2?style=flat-square&labelColor=EAF6FA&logo=github&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/loulanyue/awesome-claude-notes"><img alt="Open awesome-claude-notes" src="https://img.shields.io/badge/awesome--claude--notes-OPEN-2A9DB2?style=flat-square&labelColor=EAF6FA&logo=github&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/loulanyue/interview-notes"><img alt="Open interview-notes" src="https://img.shields.io/badge/interview--notes-OPEN-2A9DB2?style=flat-square&labelColor=EAF6FA&logo=github&logoColor=0B5C75" /></a></p>
+
+<p align="center">
+  <img src="./assets/upstream-contributions.svg" width="100%" alt="Six evidence-backed upstream contributions by LoulanYue across the AI engineering toolchain" />
+</p>
+
+<p align="center"><a href="https://github.com/openclaw/openclaw/pull/112478"><img alt="OpenClaw PR 112478" src="https://img.shields.io/badge/OpenClaw-%23112478-54A98E?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/anomalyco/opencode/pull/38763"><img alt="opencode PR 38763" src="https://img.shields.io/badge/opencode-%2338763-337E69?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/langflow-ai/langflow/pull/14177"><img alt="Langflow PR 14177" src="https://img.shields.io/badge/Langflow-%2314177-4D8FBA?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/hiyouga/LlamaFactory/pull/10660"><img alt="LlamaFactory PR 10660" src="https://img.shields.io/badge/LlamaFactory-%2310660-5D86B3?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/python-poetry/poetry/pull/10983"><img alt="Poetry PR 10983" src="https://img.shields.io/badge/Poetry-%2310983-6B8F9D?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a>&nbsp;<a href="https://github.com/googleapis/mcp-toolbox/pull/3650"><img alt="MCP Toolbox PR 3650" src="https://img.shields.io/badge/MCP_Toolbox-%233650-C49435?style=flat-square&labelColor=EAF6FA&logo=gitpullrequest&logoColor=0B5C75" /></a></p>
 
 ## `SYSTEMS THESIS / 系统主张`
 
