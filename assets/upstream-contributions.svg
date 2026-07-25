@@ -64,7 +64,7 @@
       <text id="state-openclaw" x="59" y="36" text-anchor="middle" fill="#337E69" font-size="10.5" font-weight="800" letter-spacing="1">MERGED</text>
       <text x="114" y="36" fill="#789EAB" font-size="9.5" font-weight="750" letter-spacing="1.5">MIGRATION SAFETY</text>
       <text x="20" y="74" fill="#123E52" font-size="21" font-weight="750">openclaw/openclaw</text>
-      <text id="repo-stars-openclaw" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 384.0K</text>
+      <text id="repo-stars-openclaw" x="506" y="74" text-anchor="end" fill="#6F99A7" font-size="13" font-weight="700">★ 384.1K</text>
       <text x="20" y="98" fill="#648C99" font-size="11.5" font-weight="650">PR #112478</text>
       <path d="M20 111H506" stroke="#DCECF1"/>
       <text x="20" y="138" fill="#24566A" font-size="13.8" font-weight="650">以无损文件身份守住会话迁移边界，让大 inode 环境可靠启动。</text>
