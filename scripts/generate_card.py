@@ -152,7 +152,7 @@ TEXT_MID = "#4a7a74"
 TEXT_LIGHT = "#7ab5ae"
 BG = "#f7fafa"
 BORDER = "#cce8e5"
-W, H = 900, 280
+W, H = 960, 480
 
 
 def fmt_number(n: int) -> str:
@@ -160,103 +160,186 @@ def fmt_number(n: int) -> str:
     return f"{n:,}"
 
 
-def radar_path(cx: float, cy: float, r: float, values: list[float], scale: float = 1.0) -> str:
-    """
-    Build SVG polygon path for radar chart.
-    values: list of 0..1 floats for each axis (evenly spaced, starting from top).
-    """
-    n = len(values)
-    pts = []
-    for i, v in enumerate(values):
-        angle = math.radians(-90 + i * 360 / n)
-        pr = r * v * scale
-        x = cx + pr * math.cos(angle)
-        y = cy + pr * math.sin(angle)
-        pts.append(f"{x:.2f},{y:.2f}")
-    return "M " + " L ".join(pts) + " Z"
-
-
-def ring_path(cx: float, cy: float, r: float, n_axes: int) -> str:
-    """Polygon ring for the radar grid."""
-    pts = []
-    for i in range(n_axes):
-        angle = math.radians(-90 + i * 360 / n_axes)
-        x = cx + r * math.cos(angle)
-        y = cy + r * math.sin(angle)
-        pts.append(f"{x:.2f},{y:.2f}")
-    return "M " + " L ".join(pts) + " Z"
-
-
-def spoke_lines(cx: float, cy: float, r: float, n_axes: int) -> str:
-    lines = []
-    for i in range(n_axes):
-        angle = math.radians(-90 + i * 360 / n_axes)
-        x = cx + r * math.cos(angle)
-        y = cy + r * math.sin(angle)
-        lines.append(f'<line x1="{cx:.2f}" y1="{cy:.2f}" x2="{x:.2f}" y2="{y:.2f}" '
-                     f'stroke="{TEAL}" stroke-width="0.5" stroke-opacity="0.35"/>')
-    return "\n".join(lines)
-
-
 def render_radar(cx: float, cy: float, r: float) -> str:
-    """Render the compass/radar chart matching the screenshot style."""
-    # Axis values (0..1): agent runtimes, model systems, dev tooling, security, upstream
-    values = [0.72, 0.58, 0.65, 0.80, 0.55]
-    n = len(values)
-    rings = [0.25, 0.50, 0.75, 1.0]
-
+    """Render the animated compass/radar chart with rotating scan beam matching the screenshot."""
     parts = []
 
-    # Outer circle border
-    parts.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" '
-                 f'stroke="{TEAL}" stroke-width="1.2" stroke-opacity="0.4"/>')
+    # ── Concentric solid & dashed circles ──
+    # Outer circle
+    parts.append(
+        f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" '
+        f'stroke="{TEAL}" stroke-width="1.6" stroke-opacity="0.6"/>'
+    )
+    # Secondary outer ring
+    parts.append(
+        f'<circle cx="{cx}" cy="{cy}" r="{r * 0.96:.1f}" fill="none" '
+        f'stroke="{TEAL}" stroke-width="0.8" stroke-opacity="0.25"/>'
+    )
 
-    # Grid rings
-    for frac in rings:
-        parts.append(f'<path d="{ring_path(cx, cy, r * frac, n)}" '
-                     f'fill="none" stroke="{TEAL}" stroke-width="0.6" stroke-opacity="0.3"/>')
+    # Intermediate concentric rings (solid & dotted)
+    rings = [
+        (0.78, "solid", 0.7, 0.35),
+        (0.64, "dashed", 0.6, 0.25),
+        (0.50, "solid", 0.8, 0.40),
+        (0.36, "dashed", 0.6, 0.25),
+        (0.22, "solid", 0.8, 0.45),
+        (0.08, "solid", 1.0, 0.60),
+    ]
+    for frac, style, sw, op in rings:
+        dash = 'stroke-dasharray="3,3" ' if style == "dashed" else ''
+        parts.append(
+            f'<circle cx="{cx}" cy="{cy}" r="{r * frac:.1f}" fill="none" '
+            f'stroke="{TEAL}" stroke-width="{sw}" stroke-opacity="{op}" {dash}/>'
+        )
 
-    # Spoke lines
-    parts.append(spoke_lines(cx, cy, r, n))
+    # ── Fine tick marks around outer perimeter (every 2 degrees) ──
+    for deg in range(0, 360, 2):
+        angle_rad = math.radians(deg - 90)
+        if deg % 90 == 0:
+            tl, sw, op = 12, 1.6, 0.8
+        elif deg % 30 == 0:
+            tl, sw, op = 8, 1.0, 0.6
+        elif deg % 10 == 0:
+            tl, sw, op = 5, 0.7, 0.4
+        else:
+            tl, sw, op = 3, 0.5, 0.25
+        x1 = cx + (r - tl) * math.cos(angle_rad)
+        y1 = cy + (r - tl) * math.sin(angle_rad)
+        x2 = cx + r * math.cos(angle_rad)
+        y2 = cy + r * math.sin(angle_rad)
+        parts.append(
+            f'<line x1="{x1:.2f}" y1="{y1:.2f}" x2="{x2:.2f}" y2="{y2:.2f}" '
+            f'stroke="{TEAL}" stroke-width="{sw}" stroke-opacity="{op}"/>'
+        )
 
-    # Cardinal labels
-    label_r = r + 14
-    cardinals = [("N 000°", 0), ("E 090°", 90), ("S 180°", 180), ("W 270°", 270)]
-    for label, deg in cardinals:
-        angle = math.radians(deg - 90)
-        lx = cx + label_r * math.cos(angle)
-        ly = cy + label_r * math.sin(angle)
+    # ── Crosshairs along cardinal axes ──
+    gap = r * 0.08
+    parts.append(f'<line x1="{cx - r:.1f}" y1="{cy}" x2="{cx - gap:.1f}" y2="{cy}" stroke="{TEAL}" stroke-width="0.8" stroke-opacity="0.45"/>')
+    parts.append(f'<line x1="{cx + gap:.1f}" y1="{cy}" x2="{cx + r:.1f}" y2="{cy}" stroke="{TEAL}" stroke-width="0.8" stroke-opacity="0.45"/>')
+    parts.append(f'<line x1="{cx}" y1="{cy - r:.1f}" x2="{cx}" y2="{cy - gap:.1f}" stroke="{TEAL}" stroke-width="0.8" stroke-opacity="0.45"/>')
+    parts.append(f'<line x1="{cx}" y1="{cy + gap:.1f}" x2="{cx}" y2="{cy + r:.1f}" stroke="{TEAL}" stroke-width="0.8" stroke-opacity="0.45"/>')
+
+    # Sub-axis diagonal spokes (45°, 135°, 225°, 315°) dotted
+    for diag_deg in [45, 135, 225, 315]:
+        rad = math.radians(diag_deg - 90)
+        dx1 = cx + gap * 1.5 * math.cos(rad)
+        dy1 = cy + gap * 1.5 * math.sin(rad)
+        dx2 = cx + (r * 0.95) * math.cos(rad)
+        dy2 = cy + (r * 0.95) * math.sin(rad)
+        parts.append(
+            f'<line x1="{dx1:.1f}" y1="{dy1:.1f}" x2="{dx2:.1f}" y2="{dy2:.1f}" '
+            f'stroke="{TEAL}" stroke-width="0.6" stroke-opacity="0.25" stroke-dasharray="2,3"/>'
+        )
+
+    # ── Cardinal direction labels ──
+    label_r = r + 16
+    for label, deg in [("N 000°", 0), ("E 090°", 90), ("S 180°", 180), ("W 270°", 270)]:
+        angle_rad = math.radians(deg - 90)
+        lx = cx + label_r * math.cos(angle_rad)
+        ly = cy + label_r * math.sin(angle_rad)
         anchor = "middle"
         if deg == 0:
-            ly -= 4
+            ly -= 2
         elif deg == 180:
             ly += 10
         elif deg == 90:
             anchor = "start"
-            lx += 2
+            lx += 3
+            ly += 3
         elif deg == 270:
             anchor = "end"
-            lx -= 2
-        parts.append(f'<text x="{lx:.1f}" y="{ly:.1f}" '
-                     f'font-family="monospace" font-size="6.5" fill="{TEAL}" '
-                     f'text-anchor="{anchor}" opacity="0.7">{label}</text>')
+            lx -= 3
+            ly += 3
+        parts.append(
+            f'<text x="{lx:.1f}" y="{ly:.1f}" font-family="monospace" font-size="8.5" '
+            f'fill="{TEAL}" font-weight="bold" text-anchor="{anchor}" opacity="0.85">{label}</text>'
+        )
 
-    # Data fill
-    parts.append(f'<path d="{radar_path(cx, cy, r, values)}" '
-                 f'fill="{TEAL}" fill-opacity="0.18" '
-                 f'stroke="{TEAL}" stroke-width="1.5"/>')
+    # ── Telemetry watermark annotations inside rings ──
+    parts.append(
+        f'<text x="{cx - r * 0.28:.1f}" y="{cy - 4:.1f}" font-family="monospace" font-size="7" '
+        f'fill="{TEAL}" opacity="0.45" text-anchor="middle">100K+</text>'
+    )
+    parts.append(
+        f'<text x="{cx - r * 0.28:.1f}" y="{cy + 6:.1f}" font-family="monospace" font-size="6" '
+        f'fill="{TEAL}" opacity="0.40" text-anchor="middle">MCP/TOOL</text>'
+    )
+    parts.append(
+        f'<text x="{cx + r * 0.28:.1f}" y="{cy + 2:.1f}" font-family="monospace" font-size="6.5" '
+        f'fill="{TEAL}" opacity="0.45" text-anchor="middle">HERMES</text>'
+    )
 
-    # Center dot
-    parts.append(f'<circle cx="{cx}" cy="{cy}" r="3" fill="{TEAL}" opacity="0.7"/>')
+    # ── Animated rotating radar sweep wedge (clockwise) ──
+    def pt(deg_offset: float) -> tuple[float, float]:
+        """Point on perimeter at deg_offset counter-clockwise behind leading edge."""
+        a = math.radians(-deg_offset)
+        return (r * math.sin(a), -r * math.cos(a))
 
-    # LIVE SCAN badge
-    badge_y = cy + r + 22
-    parts.append(f'<rect x="{cx - 28}" y="{badge_y - 8}" width="56" height="14" rx="3" '
-                 f'fill="none" stroke="{TEAL}" stroke-width="0.8" opacity="0.6"/>')
-    parts.append(f'<circle cx="{cx - 18}" cy="{badge_y - 1}" r="3" fill="{TEAL}" opacity="0.8"/>')
-    parts.append(f'<text x="{cx - 11}" y="{badge_y + 3}" '
-                 f'font-family="monospace" font-size="7" fill="{TEAL}" opacity="0.8">'
-                 f'LIVE SCAN</text>')
+    p0 = (0.0, -r)
+    p15 = pt(15)
+    p30 = pt(30)
+    p50 = pt(50)
+    p70 = pt(70)
+
+    def arc(px: float, py: float, qx: float, qy: float) -> str:
+        return f"M 0,0 L {px:.2f},{py:.2f} A {r:.1f},{r:.1f} 0 0,0 {qx:.2f},{qy:.2f} Z"
+
+    w1 = arc(*p0, *p15)
+    w2 = arc(*p15, *p30)
+    w3 = arc(*p30, *p50)
+    w4 = arc(*p50, *p70)
+
+    sweep_group = (
+        f'<g transform="translate({cx:.1f},{cy:.1f})">\n'
+        f'  <g>\n'
+        f'    <animateTransform attributeName="transform" type="rotate" '
+        f'from="0" to="360" dur="5s" repeatCount="indefinite"/>\n'
+        f'    <path d="{w1}" fill="{TEAL}" fill-opacity="0.32"/>\n'
+        f'    <path d="{w2}" fill="{TEAL}" fill-opacity="0.18"/>\n'
+        f'    <path d="{w3}" fill="{TEAL}" fill-opacity="0.08"/>\n'
+        f'    <path d="{w4}" fill="{TEAL}" fill-opacity="0.03"/>\n'
+        f'    <line x1="0" y1="{-r * 0.08:.1f}" x2="0" y2="{-r:.1f}" '
+        f'stroke="{TEAL}" stroke-width="2" stroke-opacity="0.95"/>\n'
+        f'    <circle cx="0" cy="{-r:.1f}" r="3" fill="{TEAL}" opacity="0.9"/>\n'
+        f'  </g>\n'
+        f'</g>'
+    )
+    parts.append(sweep_group)
+
+    # ── Radar center hub & pulse ripple ──
+    parts.append(
+        f'<circle cx="{cx}" cy="{cy}" r="{r * 0.08:.1f}" fill="{BG}" '
+        f'stroke="{TEAL}" stroke-width="1.5" stroke-opacity="0.8"/>'
+    )
+    parts.append(
+        f'<circle cx="{cx}" cy="{cy}" r="4" fill="{TEAL}" opacity="0.9"/>'
+    )
+    # Expanding pulse ring
+    parts.append(
+        f'<circle cx="{cx}" cy="{cy}" r="6" fill="none" stroke="{TEAL}" stroke-width="1.8">'
+        f'<animate attributeName="r" values="6;{r * 0.25:.1f};6" dur="2.4s" repeatCount="indefinite"/>'
+        f'<animate attributeName="stroke-opacity" values="0.8;0;0.8" dur="2.4s" repeatCount="indefinite"/>'
+        f'</circle>'
+    )
+
+    # ── LIVE SCAN badge at bottom ──
+    badge_y = cy + r + 26
+    bw, bh = 76, 20
+    bx = cx - (bw / 2)
+    parts.append(
+        f'<rect x="{bx:.1f}" y="{badge_y - bh/2:.1f}" width="{bw}" height="{bh}" rx="10" '
+        f'fill="{BG}" stroke="{TEAL}" stroke-width="1.0" stroke-opacity="0.75"/>'
+    )
+    # Blinking green beacon
+    parts.append(
+        f'<circle cx="{bx + 14:.1f}" cy="{badge_y:.1f}" r="4" fill="{TEAL}">'
+        f'<animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/>'
+        f'</circle>'
+    )
+    parts.append(
+        f'<text x="{bx + 24:.1f}" y="{badge_y + 3.5:.1f}" font-family="monospace" font-size="8.5" '
+        f'fill="{TEAL}" font-weight="bold" opacity="0.9">LIVE SCAN</text>'
+    )
 
     return "\n".join(parts)
 
@@ -268,142 +351,113 @@ def render_svg(stats: dict) -> str:
     upstream_prs = fmt_number(stats["upstream_prs"])
     updated_at = stats["updated_at"]
 
-    # Radar center
-    radar_cx = 770.0
-    radar_cy = 130.0
-    radar_r = 90.0
+    # Radar center & radius
+    radar_cx = 745.0
+    radar_cy = 225.0
+    radar_r = 150.0
 
     radar_svg = render_radar(radar_cx, radar_cy, radar_r)
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&amp;family=Noto+Sans+SC:wght@500;700;900&amp;display=swap');
+      .heading {{ font-family: 'Space Grotesk', -apple-system, sans-serif; font-weight: 900; }}
+      .subheading {{ font-family: 'Noto Sans SC', 'PingFang SC', sans-serif; }}
+      .body-eng {{ font-family: 'Space Grotesk', -apple-system, sans-serif; font-weight: 500; }}
+      .mono {{ font-family: 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace; }}
     </style>
-    <clipPath id="card-clip">
-      <rect width="{W}" height="{H}" rx="12"/>
-    </clipPath>
+    <!-- Background subtle tech grid -->
+    <pattern id="tech-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#e1f0ee" stroke-width="0.75"/>
+    </pattern>
   </defs>
 
   <!-- Card background -->
-  <rect width="{W}" height="{H}" rx="12" fill="{BG}" stroke="{BORDER}" stroke-width="1.5"/>
-
-  <!-- Divider between left content and radar -->
-  <line x1="650" y1="20" x2="650" y2="{H - 20}" stroke="{BORDER}" stroke-width="1"/>
+  <rect width="{W}" height="{H}" rx="18" fill="{BG}" stroke="{BORDER}" stroke-width="1.8"/>
+  <rect width="{W}" height="{H}" rx="18" fill="url(#tech-grid)"/>
 
   <!-- ── Left content ── -->
 
-  <!-- Status pill -->
-  <circle cx="32" cy="34" r="5" fill="{TEAL}"/>
-  <text x="44" y="38" font-family="monospace" font-size="10.5" fill="{TEAL}"
-        font-weight="bold" letter-spacing="1">OPEN-SOURCE SYSTEMS ENGINEER · LOUISVILLE, KY</text>
+  <!-- Top Status -->
+  <circle cx="52" cy="56" r="5" fill="{TEAL}"/>
+  <text x="66" y="60" class="mono" font-size="11.5" fill="{TEAL}"
+        font-weight="bold" letter-spacing="1.2">OPEN-SOURCE SYSTEMS ENGINEER · LOUISVILLE, KY</text>
 
-  <!-- Name -->
-  <text x="30" y="95" font-family="'Space Grotesk', 'Arial Black', sans-serif"
-        font-size="52" font-weight="900" fill="{TEXT_DARK}" letter-spacing="3">LOULANYUE</text>
+  <!-- Giant Brand Name -->
+  <text x="50" y="136" class="heading" font-size="62" fill="{TEXT_DARK}" letter-spacing="3.5">LOULANYUE</text>
 
-  <!-- Name underline -->
-  <line x1="30" y1="103" x2="610" y2="103" stroke="{TEAL}" stroke-width="2"/>
+  <!-- Underline under brand name -->
+  <line x1="50" y1="152" x2="495" y2="152" stroke="{TEAL}" stroke-width="2.5"/>
 
-  <!-- Chinese subtitle -->
-  <text x="30" y="128" font-family="'PingFang SC', 'Noto Sans SC', sans-serif"
-        font-size="13" fill="{TEXT_DARK}" font-weight="600">
+  <!-- Chinese Philosophy Subtitle -->
+  <text x="50" y="192" class="subheading" font-size="16" fill="{TEXT_DARK}" font-weight="700" letter-spacing="0.5">
     以开放系统工程推动智能体基础设施走向可验证、可组合与可持续演进
   </text>
 
-  <!-- English subtitle -->
-  <text x="30" y="148" font-family="'Space Grotesk', Arial, sans-serif"
-        font-size="11.5" fill="{TEXT_MID}">
-    Advancing agentic infrastructure through open systems engineered for
+  <!-- English Subtitle (two lines) -->
+  <text x="50" y="222" class="body-eng" font-size="13" fill="{TEXT_MID}" letter-spacing="0.2">
+    Advancing agentic infrastructure through open systems engineered for verification,
   </text>
-  <text x="30" y="163" font-family="'Space Grotesk', Arial, sans-serif"
-        font-size="11.5" fill="{TEXT_MID}">
-    verification, composability, and long-term evolution.
+  <text x="50" y="242" class="body-eng" font-size="13" fill="{TEXT_MID}" letter-spacing="0.2">
+    composability, and long-term evolution.
   </text>
 
-  <!-- Engineering Surface label -->
-  <text x="30" y="187" font-family="monospace" font-size="9.5"
-        fill="{TEAL}" letter-spacing="1.5" font-weight="bold">ENGINEERING SURFACE / 工程领域</text>
+  <!-- Section Label -->
+  <text x="50" y="282" class="mono" font-size="10.5" fill="{TEXT_MID}" letter-spacing="1.5" font-weight="bold">
+    ENGINEERING SURFACE / 工程领域
+  </text>
 
-  <!-- Tags -->
+  <!-- Tags Row -->
   <!-- Tag 1: AGENT RUNTIMES -->
-  <rect x="30" y="194" width="138" height="22" rx="11" fill="none"
-        stroke="{TEAL}" stroke-width="1.2"/>
-  <circle cx="47" cy="205" r="4" fill="{TEAL}"/>
-  <text x="57" y="209" font-family="monospace" font-size="9.5"
-        fill="{TEXT_DARK}" font-weight="bold" letter-spacing="0.8">AGENT RUNTIMES</text>
+  <rect x="50" y="295" width="144" height="26" rx="13" fill="#e9f6f3" stroke="#bde6df" stroke-width="1.2"/>
+  <circle cx="68" cy="308" r="4.5" fill="{TEAL}"/>
+  <text x="79" y="312" class="mono" font-size="10" fill="{TEXT_DARK}" font-weight="bold" letter-spacing="0.8">AGENT RUNTIMES</text>
 
   <!-- Tag 2: MODEL SYSTEMS -->
-  <rect x="176" y="194" width="128" height="22" rx="11" fill="none"
-        stroke="{TEAL}" stroke-width="1.2"/>
-  <circle cx="193" cy="205" r="4" fill="{TEAL}"/>
-  <text x="203" y="209" font-family="monospace" font-size="9.5"
-        fill="{TEXT_DARK}" font-weight="bold" letter-spacing="0.8">MODEL SYSTEMS</text>
+  <rect x="204" y="295" width="138" height="26" rx="13" fill="#ebf6f1" stroke="#c4e7da" stroke-width="1.2"/>
+  <circle cx="222" cy="308" r="4.5" fill="#2eb875"/>
+  <text x="233" y="312" class="mono" font-size="10" fill="{TEXT_DARK}" font-weight="bold" letter-spacing="0.8">MODEL SYSTEMS</text>
 
   <!-- Tag 3: DEVELOPER TOOLING -->
-  <rect x="312" y="194" width="148" height="22" rx="11" fill="none"
-        stroke="{TEAL}" stroke-width="1.2"/>
-  <circle cx="329" cy="205" r="4" fill="{TEAL}"/>
-  <text x="339" y="209" font-family="monospace" font-size="9.5"
-        fill="{TEXT_DARK}" font-weight="bold" letter-spacing="0.8">DEVELOPER TOOLING</text>
+  <rect x="352" y="295" width="160" height="26" rx="13" fill="#eff3f9" stroke="#cbdcf0" stroke-width="1.2"/>
+  <circle cx="370" cy="308" r="4.5" fill="#5b86e5"/>
+  <text x="381" y="312" class="mono" font-size="10" fill="{TEXT_DARK}" font-weight="bold" letter-spacing="0.8">DEVELOPER TOOLING</text>
 
-  <!-- ── Stats row ── -->
+  <!-- ── 4 Stats Columns ── -->
   <!-- Stat 1: Own repos -->
-  <text x="30" y="244" font-family="'Space Grotesk', Arial, sans-serif"
-        font-size="32" font-weight="900" fill="{TEXT_DARK}">{own_repos}</text>
-  <text x="30" y="258" font-family="monospace" font-size="8.5"
-        fill="{TEAL}" letter-spacing="0.8" font-weight="bold">ORIGINAL SYSTEMS</text>
-  <text x="30" y="269" font-family="'PingFang SC', 'Noto Sans SC', sans-serif"
-        font-size="8.5" fill="{TEXT_MID}">自有开放项目</text>
+  <text x="50" y="375" class="heading" font-size="38" fill="{TEXT_DARK}">{own_repos}</text>
+  <text x="50" y="394" class="mono" font-size="9.5" fill="{TEAL}" letter-spacing="0.8" font-weight="bold">ORIGINAL SYSTEMS</text>
+  <text x="50" y="408" class="subheading" font-size="9.5" fill="{TEXT_MID}">自有开放项目</text>
 
   <!-- Stat 2: Stars -->
-  <text x="155" y="244" font-family="'Space Grotesk', Arial, sans-serif"
-        font-size="32" font-weight="900" fill="{TEXT_DARK}">{total_stars}</text>
-  <text x="155" y="258" font-family="monospace" font-size="8.5"
-        fill="{TEAL}" letter-spacing="0.8" font-weight="bold">OWNED STARS</text>
-  <text x="155" y="269" font-family="'PingFang SC', 'Noto Sans SC', sans-serif"
-        font-size="8.5" fill="{TEXT_MID}">自有项目星标</text>
+  <text x="188" y="375" class="heading" font-size="38" fill="{TEXT_DARK}">{total_stars}</text>
+  <text x="188" y="394" class="mono" font-size="9.5" fill="{TEAL}" letter-spacing="0.8" font-weight="bold">OWNED STARS</text>
+  <text x="188" y="408" class="subheading" font-size="9.5" fill="{TEXT_MID}">自有项目星标</text>
 
   <!-- Stat 3: Followers -->
-  <text x="330" y="244" font-family="'Space Grotesk', Arial, sans-serif"
-        font-size="32" font-weight="900" fill="{TEXT_DARK}">{followers}</text>
-  <text x="330" y="258" font-family="monospace" font-size="8.5"
-        fill="{TEAL}" letter-spacing="0.8" font-weight="bold">FOLLOWERS</text>
-  <text x="330" y="269" font-family="'PingFang SC', 'Noto Sans SC', sans-serif"
-        font-size="8.5" fill="{TEXT_MID}">关注者</text>
+  <text x="340" y="375" class="heading" font-size="38" fill="{TEXT_DARK}">{followers}</text>
+  <text x="340" y="394" class="mono" font-size="9.5" fill="{TEAL}" letter-spacing="0.8" font-weight="bold">FOLLOWERS</text>
+  <text x="340" y="408" class="subheading" font-size="9.5" fill="{TEXT_MID}">关注者</text>
 
   <!-- Stat 4: Upstream PRs -->
-  <text x="440" y="244" font-family="'Space Grotesk', Arial, sans-serif"
-        font-size="32" font-weight="900" fill="{TEXT_DARK}">{upstream_prs}</text>
-  <text x="440" y="258" font-family="monospace" font-size="8.5"
-        fill="{TEAL}" letter-spacing="0.8" font-weight="bold">UPSTREAM PRS</text>
-  <text x="440" y="269" font-family="'PingFang SC', 'Noto Sans SC', sans-serif"
-        font-size="8.5" fill="{TEXT_MID}">公开上游贡献</text>
+  <text x="466" y="375" class="heading" font-size="38" fill="{TEXT_DARK}">{upstream_prs}</text>
+  <text x="466" y="394" class="mono" font-size="9.5" fill="{TEAL}" letter-spacing="0.8" font-weight="bold">UPSTREAM PRS</text>
+  <text x="466" y="408" class="subheading" font-size="9.5" fill="{TEXT_MID}">公开上游贡献</text>
 
-  <!-- ── Footer ── -->
-  <line x1="30" y1="{H - 1}" x2="{W - 30}" y2="{H - 1}" stroke="{BORDER}" stroke-width="0"/>
-  <text x="30" y="{H + 16}" font-family="monospace" font-size="8.5"
-        fill="{TEAL}" letter-spacing="1.2" font-weight="bold">
+  <!-- ── Footer Bar ── -->
+  <text x="50" y="448" class="mono" font-size="10" fill="{TEAL}" letter-spacing="1.5" font-weight="bold">
     DESIGN → CONTRIBUTE → VERIFY → STEWARD
   </text>
-  <text x="{W - 30}" y="{H + 16}" font-family="monospace" font-size="8.5"
-        fill="{TEXT_LIGHT}" text-anchor="end">UPDATED {updated_at}</text>
-
-  <!-- Bottom footer bar inside card -->
-  <line x1="30" y1="276" x2="620" y2="276" stroke="{BORDER}" stroke-width="0.8"/>
-  <text x="30" y="287" font-family="monospace" font-size="8"
-        fill="{TEAL}" letter-spacing="1" font-weight="bold" opacity="0.7">
-    DESIGN → CONTRIBUTE → VERIFY → STEWARD
+  <text x="910" y="448" class="mono" font-size="10" fill="{TEAL}" letter-spacing="1.2" font-weight="bold" text-anchor="end">
+    UPDATED {updated_at}
   </text>
-  <text x="615" y="287" font-family="monospace" font-size="8"
-        fill="{TEXT_LIGHT}" text-anchor="end">UPDATED {updated_at}</text>
 
-  <!-- ── Radar chart (right) ── -->
+  <!-- ── Animated Radar Chart (right) ── -->
   {radar_svg}
 </svg>"""
 
     return svg
-
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Entry point
