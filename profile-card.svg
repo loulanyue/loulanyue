@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280" viewBox="0 0 900 280">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;display=swap');
+    </style>
+    <clipPath id="card-clip">
+      <rect width="900" height="280" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- Card background -->
+  <rect width="900" height="280" rx="12" fill="#f7fafa" stroke="#cce8e5" stroke-width="1.5"/>
+
+  <!-- Divider between left content and radar -->
+  <line x1="650" y1="20" x2="650" y2="260" stroke="#cce8e5" stroke-width="1"/>
+
+  <!-- ── Left content ── -->
+
+  <!-- Status pill -->
+  <circle cx="32" cy="34" r="5" fill="#1a9e8f"/>
+  <text x="44" y="38" font-family="monospace" font-size="10.5" fill="#1a9e8f"
+        font-weight="bold" letter-spacing="1">OPEN-SOURCE SYSTEMS ENGINEER · LOUISVILLE, KY</text>
+
+  <!-- Name -->
+  <text x="30" y="95" font-family="'Space Grotesk', 'Arial Black', sans-serif"
+        font-size="52" font-weight="900" fill="#0d2b26" letter-spacing="3">LOULANYUE</text>
+
+  <!-- Name underline -->
+  <line x1="30" y1="103" x2="610" y2="103" stroke="#1a9e8f" stroke-width="2"/>
+
+  <!-- Chinese subtitle -->
+  <text x="30" y="128" font-family="'PingFang SC', 'Noto Sans SC', sans-serif"
+        font-size="13" fill="#0d2b26" font-weight="600">
+    以开放系统工程推动智能体基础设施走向可验证、可组合与可持续演进
+  </text>
+
+  <!-- English subtitle -->
+  <text x="30" y="148" font-family="'Space Grotesk', Arial, sans-serif"
+        font-size="11.5" fill="#4a7a74">
+    Advancing agentic infrastructure through open systems engineered for
+  </text>
+  <text x="30" y="163" font-family="'Space Grotesk', Arial, sans-serif"
+        font-size="11.5" fill="#4a7a74">
+    verification, composability, and long-term evolution.
+  </text>
+
+  <!-- Engineering Surface label -->
+  <text x="30" y="187" font-family="monospace" font-size="9.5"
+        fill="#1a9e8f" letter-spacing="1.5" font-weight="bold">ENGINEERING SURFACE / 工程领域</text>
+
+  <!-- Tags -->
+  <!-- Tag 1: AGENT RUNTIMES -->
+  <rect x="30" y="194" width="138" height="22" rx="11" fill="none"
+        stroke="#1a9e8f" stroke-width="1.2"/>
+  <circle cx="47" cy="205" r="4" fill="#1a9e8f"/>
+  <text x="57" y="209" font-family="monospace" font-size="9.5"
+        fill="#0d2b26" font-weight="bold" letter-spacing="0.8">AGENT RUNTIMES</text>
+
+  <!-- Tag 2: MODEL SYSTEMS -->
+  <rect x="176" y="194" width="128" height="22" rx="11" fill="none"
+        stroke="#1a9e8f" stroke-width="1.2"/>
+  <circle cx="193" cy="205" r="4" fill="#1a9e8f"/>
+  <text x="203" y="209" font-family="monospace" font-size="9.5"
+        fill="#0d2b26" font-weight="bold" letter-spacing="0.8">MODEL SYSTEMS</text>
+
+  <!-- Tag 3: DEVELOPER TOOLING -->
+  <rect x="312" y="194" width="148" height="22" rx="11" fill="none"
+        stroke="#1a9e8f" stroke-width="1.2"/>
+  <circle cx="329" cy="205" r="4" fill="#1a9e8f"/>
+  <text x="339" y="209" font-family="monospace" font-size="9.5"
+        fill="#0d2b26" font-weight="bold" letter-spacing="0.8">DEVELOPER TOOLING</text>
+
+  <!-- ── Stats row ── -->
+  <!-- Stat 1: Own repos -->
+  <text x="30" y="244" font-family="'Space Grotesk', Arial, sans-serif"
+        font-size="32" font-weight="900" fill="#0d2b26">13</text>
+  <text x="30" y="258" font-family="monospace" font-size="8.5"
+        fill="#1a9e8f" letter-spacing="0.8" font-weight="bold">ORIGINAL SYSTEMS</text>
+  <text x="30" y="269" font-family="'PingFang SC', 'Noto Sans SC', sans-serif"
+        font-size="8.5" fill="#4a7a74">自有开放项目</text>
+
+  <!-- Stat 2: Stars -->
+  <text x="155" y="244" font-family="'Space Grotesk', Arial, sans-serif"
+        font-size="32" font-weight="900" fill="#0d2b26">2,447</text>
+  <text x="155" y="258" font-family="monospace" font-size="8.5"
+        fill="#1a9e8f" letter-spacing="0.8" font-weight="bold">OWNED STARS</text>
+  <text x="155" y="269" font-family="'PingFang SC', 'Noto Sans SC', sans-serif"
+        font-size="8.5" fill="#4a7a74">自有项目星标</text>
+
+  <!-- Stat 3: Followers -->
+  <text x="330" y="244" font-family="'Space Grotesk', Arial, sans-serif"
+        font-size="32" font-weight="900" fill="#0d2b26">157</text>
+  <text x="330" y="258" font-family="monospace" font-size="8.5"
+        fill="#1a9e8f" letter-spacing="0.8" font-weight="bold">FOLLOWERS</text>
+  <text x="330" y="269" font-family="'PingFang SC', 'Noto Sans SC', sans-serif"
+        font-size="8.5" fill="#4a7a74">关注者</text>
+
+  <!-- Stat 4: Upstream PRs -->
+  <text x="440" y="244" font-family="'Space Grotesk', Arial, sans-serif"
+        font-size="32" font-weight="900" fill="#0d2b26">330</text>
+  <text x="440" y="258" font-family="monospace" font-size="8.5"
+        fill="#1a9e8f" letter-spacing="0.8" font-weight="bold">UPSTREAM PRS</text>
+  <text x="440" y="269" font-family="'PingFang SC', 'Noto Sans SC', sans-serif"
+        font-size="8.5" fill="#4a7a74">公开上游贡献</text>
+
+  <!-- ── Footer ── -->
+  <line x1="30" y1="279" x2="870" y2="279" stroke="#cce8e5" stroke-width="0"/>
+  <text x="30" y="296" font-family="monospace" font-size="8.5"
+        fill="#1a9e8f" letter-spacing="1.2" font-weight="bold">
+    DESIGN → CONTRIBUTE → VERIFY → STEWARD
+  </text>
+  <text x="870" y="296" font-family="monospace" font-size="8.5"
+        fill="#7ab5ae" text-anchor="end">UPDATED 2026-09-23 UTC</text>
+
+  <!-- Bottom footer bar inside card -->
+  <line x1="30" y1="276" x2="620" y2="276" stroke="#cce8e5" stroke-width="0.8"/>
+  <text x="30" y="287" font-family="monospace" font-size="8"
+        fill="#1a9e8f" letter-spacing="1" font-weight="bold" opacity="0.7">
+    DESIGN → CONTRIBUTE → VERIFY → STEWARD
+  </text>
+  <text x="615" y="287" font-family="monospace" font-size="8"
+        fill="#7ab5ae" text-anchor="end">UPDATED 2026-09-23 UTC</text>
+
+  <!-- ── Radar chart (right) ── -->
+  <circle cx="770.0" cy="130.0" r="90.0" fill="none" stroke="#1a9e8f" stroke-width="1.2" stroke-opacity="0.4"/>
+<path d="M 770.00,107.50 L 791.40,123.05 L 783.23,148.20 L 756.77,148.20 L 748.60,123.05 Z" fill="none" stroke="#1a9e8f" stroke-width="0.6" stroke-opacity="0.3"/>
+<path d="M 770.00,85.00 L 812.80,116.09 L 796.45,166.41 L 743.55,166.41 L 727.20,116.09 Z" fill="none" stroke="#1a9e8f" stroke-width="0.6" stroke-opacity="0.3"/>
+<path d="M 770.00,62.50 L 834.20,109.14 L 809.68,184.61 L 730.32,184.61 L 705.80,109.14 Z" fill="none" stroke="#1a9e8f" stroke-width="0.6" stroke-opacity="0.3"/>
+<path d="M 770.00,40.00 L 855.60,102.19 L 822.90,202.81 L 717.10,202.81 L 684.40,102.19 Z" fill="none" stroke="#1a9e8f" stroke-width="0.6" stroke-opacity="0.3"/>
+<line x1="770.00" y1="130.00" x2="770.00" y2="40.00" stroke="#1a9e8f" stroke-width="0.5" stroke-opacity="0.35"/>
+<line x1="770.00" y1="130.00" x2="855.60" y2="102.19" stroke="#1a9e8f" stroke-width="0.5" stroke-opacity="0.35"/>
+<line x1="770.00" y1="130.00" x2="822.90" y2="202.81" stroke="#1a9e8f" stroke-width="0.5" stroke-opacity="0.35"/>
+<line x1="770.00" y1="130.00" x2="717.10" y2="202.81" stroke="#1a9e8f" stroke-width="0.5" stroke-opacity="0.35"/>
+<line x1="770.00" y1="130.00" x2="684.40" y2="102.19" stroke="#1a9e8f" stroke-width="0.5" stroke-opacity="0.35"/>
+<text x="770.0" y="22.0" font-family="monospace" font-size="6.5" fill="#1a9e8f" text-anchor="middle" opacity="0.7">N 000°</text>
+<text x="876.0" y="130.0" font-family="monospace" font-size="6.5" fill="#1a9e8f" text-anchor="start" opacity="0.7">E 090°</text>
+<text x="770.0" y="244.0" font-family="monospace" font-size="6.5" fill="#1a9e8f" text-anchor="middle" opacity="0.7">S 180°</text>
+<text x="664.0" y="130.0" font-family="monospace" font-size="6.5" fill="#1a9e8f" text-anchor="end" opacity="0.7">W 270°</text>
+<path d="M 770.00,65.20 L 819.65,113.87 L 804.39,177.33 L 727.68,188.25 L 722.92,114.70 Z" fill="#1a9e8f" fill-opacity="0.18" stroke="#1a9e8f" stroke-width="1.5"/>
+<circle cx="770.0" cy="130.0" r="3" fill="#1a9e8f" opacity="0.7"/>
+<rect x="742.0" y="234.0" width="56" height="14" rx="3" fill="none" stroke="#1a9e8f" stroke-width="0.8" opacity="0.6"/>
+<circle cx="752.0" cy="241.0" r="3" fill="#1a9e8f" opacity="0.8"/>
+<text x="759.0" y="245.0" font-family="monospace" font-size="7" fill="#1a9e8f" opacity="0.8">LIVE SCAN</text>
+</svg>

@@ -1,0 +1,47 @@
+name: Update Profile Card
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:      # Allow manual trigger from GitHub Actions UI
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/generate_card.py'
+      - '.github/workflows/update-stats.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-card:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate profile card SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/generate_card.py \
+            --token "$GITHUB_TOKEN" \
+            --output profile-card.svg
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile-card.svg
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: auto-update profile card [skip ci]"
+            git push
+          fi
