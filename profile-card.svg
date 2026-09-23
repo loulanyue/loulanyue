@@ -66,7 +66,7 @@
 
   <!-- ── 4 Stats Columns ── -->
   <!-- Stat 1: Own repos -->
-  <text x="50" y="375" class="heading" font-size="38" fill="#0d2b26">13</text>
+  <text x="50" y="375" class="heading" font-size="38" fill="#0d2b26">14</text>
   <text x="50" y="394" class="mono" font-size="9.5" fill="#1a9e8f" letter-spacing="0.8" font-weight="bold">ORIGINAL SYSTEMS</text>
   <text x="50" y="408" class="subheading" font-size="9.5" fill="#4a7a74">自有开放项目</text>
 
@@ -76,12 +76,12 @@
   <text x="188" y="408" class="subheading" font-size="9.5" fill="#4a7a74">自有项目星标</text>
 
   <!-- Stat 3: Followers -->
-  <text x="340" y="375" class="heading" font-size="38" fill="#0d2b26">157</text>
+  <text x="340" y="375" class="heading" font-size="38" fill="#0d2b26">158</text>
   <text x="340" y="394" class="mono" font-size="9.5" fill="#1a9e8f" letter-spacing="0.8" font-weight="bold">FOLLOWERS</text>
   <text x="340" y="408" class="subheading" font-size="9.5" fill="#4a7a74">关注者</text>
 
   <!-- Stat 4: Upstream PRs -->
-  <text x="466" y="375" class="heading" font-size="38" fill="#0d2b26">330</text>
+  <text x="466" y="375" class="heading" font-size="38" fill="#0d2b26">355</text>
   <text x="466" y="394" class="mono" font-size="9.5" fill="#1a9e8f" letter-spacing="0.8" font-weight="bold">UPSTREAM PRS</text>
   <text x="466" y="408" class="subheading" font-size="9.5" fill="#4a7a74">公开上游贡献</text>
 
@@ -90,7 +90,7 @@
     DESIGN → CONTRIBUTE → VERIFY → STEWARD
   </text>
   <text x="910" y="448" class="mono" font-size="10" fill="#1a9e8f" letter-spacing="1.2" font-weight="bold" text-anchor="end">
-    UPDATED 2026-09-04 UTC
+    UPDATED 2026-09-23 UTC
   </text>
 
   <!-- ── Animated Radar Chart (right) ── -->
