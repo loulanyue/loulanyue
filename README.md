@@ -2,10 +2,13 @@
   <img src="profile-card.svg" alt="loulanyue profile card" width="900" />
 </div>
 
-<!--
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  The card above is auto-generated every 6 hours via GitHub Actions.     │
-  │  Source: .github/workflows/update-stats.yml                             │
-  │  Script: scripts/generate_card.py                                       │
-  └─────────────────────────────────────────────────────────────────────────┘
--->
+<br/>
+
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/loulanyue/loulanyue/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/loulanyue/loulanyue/output/github-contribution-grid-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/loulanyue/loulanyue/output/github-contribution-grid-snake.svg" />
+</picture>
