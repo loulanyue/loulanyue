@@ -15,10 +15,66 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <!-- Card clip boundary -->
+    <clipPath id="card-clip">
+      <rect width="1024" height="512" rx="14"/>
+    </clipPath>
+
+    <!-- Faint background cyber grid -->
+    <pattern id="cyber-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#0a1a24" stroke-width="0.75" stroke-opacity="0.45"/>
+      <circle cx="32" cy="32" r="0.8" fill="#00e5ff" fill-opacity="0.25"/>
+    </pattern>
+
+    <!-- Moving horizontal scan ray gradient (Left to Right) -->
+    <linearGradient id="scan-beam-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#00e5ff" stop-opacity="0.02"/>
+      <stop offset="65%" stop-color="#00e5ff" stop-opacity="0.07"/>
+      <stop offset="96%" stop-color="#00f0ff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.55"/>
+    </linearGradient>
+
+    <!-- Scanline laser highlight gradient -->
+    <linearGradient id="laser-line-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#00f0ff" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="85%" stop-color="#00f0ff" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
-  <!-- Card background -->
-  <rect width="1024" height="512" fill="#03070d"/>
+  <!-- ── Background Layers ── -->
+  <rect width="1024" height="512" rx="14" fill="#03070d"/>
+  <rect width="1024" height="512" rx="14" fill="url(#cyber-grid)"/>
+
+  <!-- ── Animated Periodic Background Scan Wave (Left to Right) ── -->
+  <g clip-path="url(#card-clip)">
+    <!-- 7s total cycle: 4s smooth sweep from left to right, 3s idle pause -->
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="-260,0; 1100,0; 1100,0"
+        keyTimes="0; 0.58; 1"
+        dur="7s"
+        repeatCount="indefinite"/>
+
+      <!-- Fading beam tail -->
+      <rect x="0" y="0" width="240" height="512" fill="url(#scan-beam-grad)"/>
+
+      <!-- High-energy laser leading edge line -->
+      <line x1="240" y1="0" x2="240" y2="512" stroke="url(#laser-line-grad)" stroke-width="1.8" filter="url(#glow)"/>
+
+      <!-- Laser spark particles -->
+      <circle cx="240" cy="95" r="2.2" fill="#ffffff" filter="url(#glow)"/>
+      <circle cx="240" cy="245" r="2.5" fill="#00f0ff" filter="url(#glow)"/>
+      <circle cx="240" cy="385" r="2" fill="#00f0ff" filter="url(#glow)"/>
+    </g>
+  </g>
+
+  <!-- Outer Card Frame Border -->
+  <rect width="1024" height="512" rx="14" fill="none" stroke="#0e1c28" stroke-width="1.2"/>
 
   <!-- ── Top Status Header ── -->
   <text x="35" y="52" class="mono" font-size="11" font-weight="bold" letter-spacing="1">
