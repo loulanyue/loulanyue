@@ -73,6 +73,208 @@
     </g>
   </g>
 
+  <!-- ── Animated Multi-Directional Ambient Particles ── -->
+  <g id="ambient-particles" clip-path="url(#card-clip)">
+    <circle cx="115" cy="36" r="1.4" fill="#00e5ff" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 16,-18; 8,-28; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="6.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.2;0.8;0.3;0.9;0.2"
+        dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="260" cy="75" r="2.0" fill="#00f0ff" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -20,-15; -35,-8; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="7.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.15;0.7;0.2;0.85;0.15"
+        dur="7.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="430" cy="42" r="1.2" fill="#ffffff" opacity="0.3">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 22,18; 38,28; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="8.1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.2;0.9;0.1;0.75;0.2"
+        dur="8.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="380" cy="110" r="1.8" fill="#00ff9d" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -18,20; -28,35; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="6.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.1;0.8;0.4;0.9;0.1"
+        dur="6.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="495" cy="175" r="2.2" fill="#00e5ff" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 28,-14; 45,-6; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="7.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.2;0.95;0.3;0.8;0.2"
+        dur="7.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="540" cy="225" r="1.5" fill="#9d65ff" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -25,15; -42,8; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="8.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.15;0.75;0.2;0.9;0.15"
+        dur="8.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="475" cy="275" r="1.8" fill="#00ff9d" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 15,24; 25,42; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="6.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.3;0.9;0.2;0.85;0.3"
+        dur="6.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="130" cy="285" r="1.3" fill="#00e5ff" opacity="0.3">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -16,-22; -26,-38; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="7.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.2;0.8;0.35;0.75;0.2"
+        dur="7.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="275" cy="360" r="2.0" fill="#9d65ff" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 32,12; 52,-4; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="9.0s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.1;0.7;0.25;0.85;0.1"
+        dur="9.0s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="430" cy="345" r="1.6" fill="#00f0ff" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -12,-26; 6,-48; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="6.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.25;0.9;0.4;0.8;0.25"
+        dur="6.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="90" cy="400" r="1.5" fill="#00e5ff" opacity="0.3">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 20,-18; 35,-28; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="7.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.2;0.85;0.3;0.7;0.2"
+        dur="7.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="240" cy="475" r="2.2" fill="#00ff9d" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -24,-16; -40,-10; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="8.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.15;0.8;0.2;0.95;0.15"
+        dur="8.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="370" cy="415" r="1.3" fill="#ffffff" opacity="0.3">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 18,22; 32,36; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="6.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.3;0.75;0.2;0.85;0.3"
+        dur="6.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="510" cy="465" r="1.7" fill="#00e5ff" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -18,24; -30,40; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="7.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.2;0.9;0.3;0.8;0.2"
+        dur="7.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="625" cy="85" r="2.4" fill="#00e5ff" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 25,-20; 42,-12; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="8.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.2;0.95;0.35;0.85;0.2"
+        dur="8.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="740" cy="45" r="1.4" fill="#ffffff" opacity="0.3">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -15,25; -25,45; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="7.0s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.15;0.7;0.3;0.9;0.15"
+        dur="7.0s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="925" cy="75" r="2.0" fill="#9d65ff" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -22,-18; -38,-30; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="8.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.2;0.85;0.25;0.75;0.2"
+        dur="8.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="970" cy="195" r="1.6" fill="#00f0ff" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -30,14; -55,6; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="6.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.3;0.9;0.2;0.8;0.3"
+        dur="6.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="608" cy="240" r="1.8" fill="#00ff9d" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -20,-22; -35,-35; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="7.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.15;0.8;0.4;0.95;0.15"
+        dur="7.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="645" cy="385" r="2.2" fill="#00e5ff" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 24,18; 40,30; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="8.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.2;0.85;0.3;0.9;0.2"
+        dur="8.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="875" cy="435" r="1.5" fill="#ffffff" opacity="0.3">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 18,-25; 30,-42; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="6.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.25;0.75;0.15;0.85;0.25"
+        dur="6.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="965" cy="340" r="2.0" fill="#9d65ff" opacity="0.3" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -18,24; -32,40; 0,0"
+        keyTimes="0; 0.45; 0.8; 1"
+        dur="9.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.1;0.8;0.3;0.95;0.1"
+        dur="9.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
   <!-- Outer Card Frame Border -->
   <rect width="1024" height="512" rx="14" fill="none" stroke="#0e1c28" stroke-width="1.2"/>
 
@@ -95,11 +297,11 @@
   </text>
 
   <!-- ── English Subtitle ── -->
-  <text x="35" y="234" class="body-eng" font-size="13" fill="#7b919e" letter-spacing="0.2">
-    Advancing agentic infrastructure through open systems engineered for verification, composability, and long-term
+  <text x="35" y="230" class="body-eng" font-size="12.5" fill="#7b919e" letter-spacing="0.2">
+    Advancing agentic infrastructure through open systems engineered
   </text>
-  <text x="35" y="254" class="body-eng" font-size="13" fill="#7b919e" letter-spacing="0.2">
-    evolution.
+  <text x="35" y="250" class="body-eng" font-size="12.5" fill="#7b919e" letter-spacing="0.2">
+    for verification, composability, and long-term evolution.
   </text>
 
   <!-- ── Section Label ── -->

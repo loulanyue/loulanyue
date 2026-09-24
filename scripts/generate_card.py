@@ -17,6 +17,7 @@ Fetches live data from GitHub API and renders the full card SVG including:
 import argparse
 import json
 import math
+import os
 import re
 import sys
 import urllib.request
@@ -346,6 +347,66 @@ def render_radar(cx: float, cy: float, r: float) -> str:
     return "\n".join(parts)
 
 
+def render_particles() -> str:
+    """
+    Render ambient floating cyber particles with multi-directional random vectors.
+    Directions include Northeast, Northwest, Southeast, Southwest, horizontal drift,
+    vertical drift, and meandering paths across the canvas.
+    """
+    particles_data = [
+        # (cx, cy, r, color, glow, (dx1, dy1, dx2, dy2), dur, op_vals)
+        # Top-left region (Header / title / brand)
+        (115, 36, 1.4, CYAN, True, (16, -18, 8, -28), 6.5, "0.2;0.8;0.3;0.9;0.2"),           # NE
+        (260, 75, 2.0, CYAN_GLOW, True, (-20, -15, -35, -8), 7.2, "0.15;0.7;0.2;0.85;0.15"),   # NW
+        (430, 42, 1.2, TEXT_WHITE, False, (22, 18, 38, 28), 8.1, "0.2;0.9;0.1;0.75;0.2"),      # SE
+        (380, 110, 1.8, EMERALD, True, (-18, 20, -28, 35), 6.8, "0.1;0.8;0.4;0.9;0.1"),       # SW
+
+        # Mid-left region (Subtitles & tags)
+        (495, 175, 2.2, CYAN, True, (28, -14, 45, -6), 7.5, "0.2;0.95;0.3;0.8;0.2"),          # E-NE
+        (540, 225, 1.5, PURPLE, True, (-25, 15, -42, 8), 8.6, "0.15;0.75;0.2;0.9;0.15"),      # W-SW
+        (475, 275, 1.8, EMERALD, True, (15, 24, 25, 42), 6.2, "0.3;0.9;0.2;0.85;0.3"),        # SE
+        (130, 285, 1.3, CYAN, False, (-16, -22, -26, -38), 7.8, "0.2;0.8;0.35;0.75;0.2"),     # NW
+        (275, 360, 2.0, PURPLE, True, (32, 12, 52, -4), 9.0, "0.1;0.7;0.25;0.85;0.1"),        # E drift
+        (430, 345, 1.6, CYAN_GLOW, True, (-12, -26, 6, -48), 6.9, "0.25;0.9;0.4;0.8;0.25"),   # N wandering
+
+        # Bottom-left stats area
+        (90, 400, 1.5, CYAN, False, (20, -18, 35, -28), 7.4, "0.2;0.85;0.3;0.7;0.2"),          # NE
+        (240, 475, 2.2, EMERALD, True, (-24, -16, -40, -10), 8.4, "0.15;0.8;0.2;0.95;0.15"),   # NW
+        (370, 415, 1.3, TEXT_WHITE, False, (18, 22, 32, 36), 6.6, "0.3;0.75;0.2;0.85;0.3"),     # SE
+        (510, 465, 1.7, CYAN, True, (-18, 24, -30, 40), 7.9, "0.2;0.9;0.3;0.8;0.2"),           # SW
+
+        # Periphery of Radar chart (Cyber constellation)
+        (625, 85, 2.4, CYAN, True, (25, -20, 42, -12), 8.2, "0.2;0.95;0.35;0.85;0.2"),        # NE
+        (740, 45, 1.4, TEXT_WHITE, False, (-15, 25, -25, 45), 7.0, "0.15;0.7;0.3;0.9;0.15"),    # SW
+        (925, 75, 2.0, PURPLE, True, (-22, -18, -38, -30), 8.8, "0.2;0.85;0.25;0.75;0.2"),     # NW
+        (970, 195, 1.6, CYAN_GLOW, True, (-30, 14, -55, 6), 6.4, "0.3;0.9;0.2;0.8;0.3"),       # W drift
+        (608, 240, 1.8, EMERALD, True, (-20, -22, -35, -35), 7.7, "0.15;0.8;0.4;0.95;0.15"),   # NW
+        (645, 385, 2.2, CYAN, True, (24, 18, 40, 30), 8.5, "0.2;0.85;0.3;0.9;0.2"),           # SE
+        (875, 435, 1.5, TEXT_WHITE, False, (18, -25, 30, -42), 6.8, "0.25;0.75;0.15;0.85;0.25"),# NE
+        (965, 340, 2.0, PURPLE, True, (-18, 24, -32, 40), 9.2, "0.1;0.8;0.3;0.95;0.1"),       # SW
+    ]
+
+    parts = [
+        '  <!-- ── Animated Multi-Directional Ambient Particles ── -->',
+        '  <g id="ambient-particles" clip-path="url(#card-clip)">',
+    ]
+    for cx, cy, r, col, glow, (dx1, dy1, dx2, dy2), dur, op in particles_data:
+        glow_attr = ' filter="url(#glow)"' if glow else ''
+        parts.append(
+            f'    <circle cx="{cx}" cy="{cy}" r="{r}" fill="{col}" opacity="0.3"{glow_attr}>\n'
+            f'      <animateTransform attributeName="transform" type="translate"\n'
+            f'        values="0,0; {dx1},{dy1}; {dx2},{dy2}; 0,0"\n'
+            f'        keyTimes="0; 0.45; 0.8; 1"\n'
+            f'        dur="{dur}s" repeatCount="indefinite"/>\n'
+            f'      <animate attributeName="opacity"\n'
+            f'        values="{op}"\n'
+            f'        dur="{dur}s" repeatCount="indefinite"/>\n'
+            f'    </circle>'
+        )
+    parts.append('  </g>')
+    return "\n".join(parts)
+
+
 def render_svg(stats: dict) -> str:
     own_repos = fmt_number(stats["own_repos"])
     total_stars = fmt_number(stats["total_stars"])
@@ -359,6 +420,7 @@ def render_svg(stats: dict) -> str:
     radar_r = 160.0
 
     radar_svg = render_radar(radar_cx, radar_cy, radar_r)
+    particles_svg = render_particles()
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
   <defs>
@@ -435,6 +497,8 @@ def render_svg(stats: dict) -> str:
     </g>
   </g>
 
+{particles_svg}
+
   <!-- Outer Card Frame Border -->
   <rect width="{W}" height="{H}" rx="14" fill="none" stroke="{BORDER}" stroke-width="1.2"/>
 
@@ -457,11 +521,11 @@ def render_svg(stats: dict) -> str:
   </text>
 
   <!-- ── English Subtitle ── -->
-  <text x="35" y="234" class="body-eng" font-size="13" fill="{TEXT_MUTED}" letter-spacing="0.2">
-    Advancing agentic infrastructure through open systems engineered for verification, composability, and long-term
+  <text x="35" y="230" class="body-eng" font-size="12.5" fill="{TEXT_MUTED}" letter-spacing="0.2">
+    Advancing agentic infrastructure through open systems engineered
   </text>
-  <text x="35" y="254" class="body-eng" font-size="13" fill="{TEXT_MUTED}" letter-spacing="0.2">
-    evolution.
+  <text x="35" y="250" class="body-eng" font-size="12.5" fill="{TEXT_MUTED}" letter-spacing="0.2">
+    for verification, composability, and long-term evolution.
   </text>
 
   <!-- ── Section Label ── -->
@@ -529,14 +593,56 @@ def render_svg(stats: dict) -> str:
 # Entry point
 # ──────────────────────────────────────────────────────────────────────────────
 
+def extract_existing_stats(svg_path: str) -> dict:
+    fallback = {
+        "own_repos": 14,
+        "total_stars": 2448,
+        "followers": 158,
+        "upstream_prs": 355,
+        "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d UTC"),
+    }
+    if not os.path.exists(svg_path):
+        return fallback
+    try:
+        with open(svg_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        m_repos = re.search(r'class="heading"[^>]*>([\d,]+)</text>\s*<text[^>]*>ORIGINAL SYSTEMS', content)
+        m_stars = re.search(r'class="heading"[^>]*>([\d,]+)</text>\s*<text[^>]*>OWNED STARS', content)
+        m_followers = re.search(r'class="heading"[^>]*>([\d,]+)</text>\s*<text[^>]*>FOLLOWERS', content)
+        m_prs = re.search(r'class="heading"[^>]*>([\d,]+)</text>\s*<text[^>]*>UPSTREAM PRS', content)
+        m_updated = re.search(r'UPDATED\s+([^<\n]+)', content)
+        if m_repos:
+            fallback["own_repos"] = int(m_repos.group(1).replace(",", ""))
+        if m_stars:
+            fallback["total_stars"] = int(m_stars.group(1).replace(",", ""))
+        if m_followers:
+            fallback["followers"] = int(m_followers.group(1).replace(",", ""))
+        if m_prs:
+            fallback["upstream_prs"] = int(m_prs.group(1).replace(",", ""))
+        if m_updated:
+            fallback["updated_at"] = m_updated.group(1).strip()
+    except Exception as e:
+        print(f"Warning: could not parse existing stats from {svg_path}: {e}")
+    return fallback
+
+
 def main():
     parser = argparse.ArgumentParser(description="Generate loulanyue profile card SVG")
-    parser.add_argument("--token", required=True, help="GitHub personal access token")
+    parser.add_argument("--token", default=os.environ.get("GITHUB_TOKEN"), help="GitHub personal access token")
     parser.add_argument("--output", default="profile-card.svg", help="Output SVG file path")
     args = parser.parse_args()
 
-    print(f"Fetching stats for @{USERNAME}...")
-    stats = fetch_stats(args.token)
+    if args.token:
+        print(f"Fetching stats for @{USERNAME} from GitHub API...")
+        try:
+            stats = fetch_stats(args.token)
+        except Exception as e:
+            print(f"Error fetching stats from API: {e}, falling back to existing stats.")
+            stats = extract_existing_stats(args.output)
+    else:
+        print("No token provided, using existing stats...")
+        stats = extract_existing_stats(args.output)
+
     print(f"  Own repos    : {stats['own_repos']}")
     print(f"  Owned stars  : {stats['total_stars']:,}")
     print(f"  Followers    : {stats['followers']:,}")
