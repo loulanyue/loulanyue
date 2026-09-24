@@ -9,6 +9,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/generate_card.py'
+      - 'scripts/generate_hero.py'
       - '.github/workflows/update-stats.yml'
 
 permissions:
@@ -34,14 +35,18 @@ jobs:
             --token "$GITHUB_TOKEN" \
             --output profile-card.svg
 
+      - name: Generate hero keynote SVG
+        run: |
+          python scripts/generate_hero.py
+
       - name: Commit and push if changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add profile-card.svg
+          git add profile-card.svg hero-keynote.svg
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: auto-update profile card [skip ci]"
+            git commit -m "chore: auto-update profile cards [skip ci]"
             git push
           fi
