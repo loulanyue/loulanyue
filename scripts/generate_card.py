@@ -147,7 +147,7 @@ def fetch_stats(token: str) -> dict:
 # SVG rendering (Keynote-Harmonized Cosmic Cyberpunk)
 # ──────────────────────────────────────────────────────────────────────────────
 
-W, H = 1360, 540
+W, H = 1200, 540
 BG = "#020408"
 CYAN = "#00e5ff"
 CYAN_GLOW = "#00f0ff"
@@ -262,39 +262,35 @@ def render_badges() -> str:
     return "\n".join(parts)
 
 
-def render_radar(cx: float, cy: float, r: float, clockwise: bool = True) -> str:
-    """Render the animated cyber dark radar with rotating scan beam and detected targets.
-    
-    Args:
-        clockwise: If True (default), sweep rotates clockwise. If False, counter-clockwise.
+def render_radar(cx: float, cy: float, r: float) -> str:
+    """Render the animated cyber dark radar with TWO rotating scan beams inside one circle:
+    - Clockwise beam (cyan), starting at N
+    - Counter-clockwise beam (emerald), starting at S (180° apart)
     """
     parts = []
 
     # ── Concentric solid & dashed rings ──
-    # Outer main circle
     parts.append(
         f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" '
         f'stroke="{WHITE}" stroke-width="1.4" stroke-opacity="0.4" filter="url(#glow)"/>'
     )
-    # Secondary outer boundary
     parts.append(
         f'<circle cx="{cx}" cy="{cy}" r="{r * 0.96:.1f}" fill="none" '
         f'stroke="{CYAN}" stroke-width="0.8" stroke-opacity="0.25"/>'
     )
 
-    # Intermediate rings
     rings = [
-        (0.72, "solid", 0.7, 0.22),
-        (0.48, "solid", 0.8, 0.28),
-        (0.24, "solid", 0.9, 0.32),
+        (0.72, 0.7, 0.22),
+        (0.48, 0.8, 0.28),
+        (0.24, 0.9, 0.32),
     ]
-    for frac, style, sw, op in rings:
+    for frac, sw, op in rings:
         parts.append(
             f'<circle cx="{cx}" cy="{cy}" r="{r * frac:.1f}" fill="none" '
             f'stroke="{CYAN}" stroke-width="{sw}" stroke-opacity="{op}"/>'
         )
 
-    # ── Outer perimeter fine tick marks (every 5 degrees) ──
+    # ── Tick marks ──
     for deg in range(0, 360, 5):
         angle_rad = math.radians(deg - 90)
         if deg % 90 == 0:
@@ -331,75 +327,74 @@ def render_radar(cx: float, cy: float, r: float, clockwise: bool = True) -> str:
         elif deg == 180:
             ly += 9
         elif deg == 90:
-            anchor = "start"
-            lx += 4
-            ly += 3
+            anchor = "start"; lx += 4; ly += 3
         elif deg == 270:
-            anchor = "end"
-            lx -= 4
-            ly += 3
+            anchor = "end"; lx -= 4; ly += 3
         parts.append(
             f'<text x="{lx:.1f}" y="{ly:.1f}" font-family="monospace" font-size="8.5" '
             f'fill="{CYAN}" font-weight="bold" text-anchor="{anchor}" opacity="0.95">{label}</text>'
         )
 
-    # ── Animated rotating radar sweep sector (clockwise) ──
-    def pt(deg_offset: float) -> tuple[float, float]:
-        a = math.radians(-deg_offset)
-        return (r * math.sin(a), -r * math.cos(a))
+    # ── Helper: build a trailing-wake sector path ──
+    def make_wake_paths(color: str, start_angle_deg: float, cw: bool) -> str:
+        """Build 4 layered wake-sector paths for one beam.
+        
+        start_angle_deg: starting rotation offset (degrees from N, clockwise)
+        cw: True = clockwise rotation, False = counter-clockwise
+        """
+        # The wake extends BEHIND the leading edge:
+        # For CW beam: wake fans to the left (negative angle offset)
+        # For CCW beam: wake fans to the right (positive angle offset)
+        sign = -1 if cw else 1
 
-    p0 = (0.0, -r)
-    p15 = pt(15)
-    p30 = pt(30)
-    p50 = pt(50)
-    p70 = pt(70)
+        def pt(offset_deg):
+            a = math.radians(sign * offset_deg)
+            return (r * math.sin(a), -r * math.cos(a))
 
-    def arc(px: float, py: float, qx: float, qy: float, cw: bool = True) -> str:
-        # SVG arc sweep-flag: 0=counter-clockwise, 1=clockwise (in standard orientation)
-        # Our coordinate system is flipped, so 0,0 means CCW in canvas = our CW sector
-        sweep = "0" if cw else "1"
-        return f"M 0,0 L {px:.2f},{py:.2f} A {r:.1f},{r:.1f} 0 0,{sweep} {qx:.2f},{qy:.2f} Z"
+        p0 = (0.0, -r)       # leading edge tip
+        p15 = pt(15)
+        p30 = pt(30)
+        p50 = pt(50)
+        p70 = pt(70)
 
-    if clockwise:
-        w1 = arc(*p0, *p15, cw=True)
-        w2 = arc(*p15, *p30, cw=True)
-        w3 = arc(*p30, *p50, cw=True)
-        w4 = arc(*p50, *p70, cw=True)
-        sweep_from, sweep_to = "0", "360"
-        beam_color = CYAN
-    else:
-        # Counter-clockwise: mirror the sector points so the wake trails behind CCW sweep
-        p0_ccw = (0.0, -r)
-        p15_ccw = (-r * math.sin(math.radians(15)), -r * math.cos(math.radians(15)))
-        p30_ccw = (-r * math.sin(math.radians(30)), -r * math.cos(math.radians(30)))
-        p50_ccw = (-r * math.sin(math.radians(50)), -r * math.cos(math.radians(50)))
-        p70_ccw = (-r * math.sin(math.radians(70)), -r * math.cos(math.radians(70)))
-        # For CCW, arc goes from outer to inner angle (sweep-flag=1 in mirrored coords)
-        def arc_ccw(px, py, qx, qy):
-            return f"M 0,0 L {px:.2f},{py:.2f} A {r:.1f},{r:.1f} 0 0,1 {qx:.2f},{qy:.2f} Z"
-        w1 = arc_ccw(*p0_ccw, *p15_ccw)
-        w2 = arc_ccw(*p15_ccw, *p30_ccw)
-        w3 = arc_ccw(*p30_ccw, *p50_ccw)
-        w4 = arc_ccw(*p50_ccw, *p70_ccw)
-        sweep_from, sweep_to = "0", "-360"
-        beam_color = EMERALD
+        sweep_flag = "0" if cw else "1"
 
-    sweep_group = (
-        f'<g transform="translate({cx:.1f},{cy:.1f})">\n'
-        f'  <g>\n'
-        f'    <animateTransform attributeName="transform" type="rotate" '
-        f'from="{sweep_from}" to="{sweep_to}" dur="5s" repeatCount="indefinite"/>\n'
-        f'    <path d="{w1}" fill="{beam_color}" fill-opacity="0.28"/>\n'
-        f'    <path d="{w2}" fill="{beam_color}" fill-opacity="0.15"/>\n'
-        f'    <path d="{w3}" fill="{beam_color}" fill-opacity="0.07"/>\n'
-        f'    <path d="{w4}" fill="{beam_color}" fill-opacity="0.02"/>\n'
-        f'    <line x1="0" y1="{-r * 0.1:.1f}" x2="0" y2="{-r:.1f}" '
-        f'stroke="{WHITE}" stroke-width="2" stroke-opacity="0.95" filter="url(#glow)"/>\n'
-        f'    <circle cx="0" cy="{-r:.1f}" r="2.8" fill="{beam_color}" filter="url(#glow)"/>\n'
-        f'  </g>\n'
-        f'</g>'
-    )
-    parts.append(sweep_group)
+        def sector(pa, pb):
+            ax, ay = pa
+            bx, by = pb
+            return f"M 0,0 L {ax:.2f},{ay:.2f} A {r:.1f},{r:.1f} 0 0,{sweep_flag} {bx:.2f},{by:.2f} Z"
+
+        w1 = sector(p0, p15)
+        w2 = sector(p15, p30)
+        w3 = sector(p30, p50)
+        w4 = sector(p50, p70)
+
+        # Rotation direction: CW = to="360", CCW = to="-360"
+        rot_to = "360" if cw else "-360"
+
+        return (
+            f'<g transform="translate({cx:.1f},{cy:.1f})">\n'
+            f'  <g>\n'
+            f'    <animateTransform attributeName="transform" type="rotate"\n'
+            f'      from="{start_angle_deg}" to="{start_angle_deg + (360 if cw else -360)}"\n'
+            f'      dur="5s" repeatCount="indefinite"/>\n'
+            f'    <path d="{w1}" fill="{color}" fill-opacity="0.30"/>\n'
+            f'    <path d="{w2}" fill="{color}" fill-opacity="0.16"/>\n'
+            f'    <path d="{w3}" fill="{color}" fill-opacity="0.08"/>\n'
+            f'    <path d="{w4}" fill="{color}" fill-opacity="0.03"/>\n'
+            f'    <line x1="0" y1="{-r * 0.1:.1f}" x2="0" y2="{-r:.1f}"\n'
+            f'      stroke="{color}" stroke-width="1.8" stroke-opacity="0.92" filter="url(#glow)"/>\n'
+            f'    <circle cx="0" cy="{-r:.1f}" r="2.6" fill="{color}" filter="url(#glow)"/>\n'
+            f'  </g>\n'
+            f'</g>'
+        )
+
+    # Clockwise beam: cyan, starts at N (0°), rotates to 360°
+    parts.append(make_wake_paths(CYAN, start_angle_deg=0, cw=True))
+
+    # Counter-clockwise beam: emerald, starts at S (180°), rotates to -180° (back to S via CCW)
+    parts.append(make_wake_paths(EMERALD, start_angle_deg=180, cw=False))
+
 
     # ── Detected Targets / Blips on Radar ──
     # 1. MCP / TOOL (Northwest)
@@ -558,18 +553,13 @@ def render_svg(stats: dict) -> str:
     upstream_prs = fmt_number(stats["upstream_prs"])
     updated_at = stats["updated_at"]
 
-    # Dual-Radar layout: left CW (cyan) at ~840px, right CCW (emerald) at ~1185px
-    # Canvas is now 1360px wide
-    radar_r = 148.0
+
+    # Radar center & radius (single radar with dual-beam sweep)
+    radar_cx = 940.0
     radar_cy = 255.0
+    radar_r = 165.0
 
-    # Left radar (clockwise, cyan)
-    radar_cx = 855.0
-    # Right radar (counter-clockwise, emerald) — offset by ~330px
-    radar2_cx = 1185.0
-
-    radar_svg = render_radar(radar_cx, radar_cy, radar_r, clockwise=True)
-    radar2_svg = render_radar(radar2_cx, radar_cy, radar_r, clockwise=False)
+    radar_svg = render_radar(radar_cx, radar_cy, radar_r)
     particles_svg = render_particles()
     stars_svg = generate_stars(75)
     circuit_svg = generate_card_circuit()
@@ -730,21 +720,12 @@ def render_svg(stats: dict) -> str:
     DESIGN  →  CONTRIBUTE  →  VERIFY  →  STEWARD
   </text>
 
-  <!-- ── Footer timestamp updated position for wider canvas ── -->
-  <text x="1312" y="504" class="mono" font-size="10" fill="#527593" letter-spacing="1.2" font-weight="bold" text-anchor="end">
+  <text x="1152" y="504" class="mono" font-size="10" fill="#527593" letter-spacing="1.2" font-weight="bold" text-anchor="end">
     UPDATED {updated_at}
   </text>
 
-  <!-- ── Animated Cyber Radar Left (Clockwise · CW) ── -->
+  <!-- ── Animated Cyber Radar (Dual-Beam: CW cyan + CCW emerald) ── -->
   {radar_svg}
-
-  <!-- ── Vertical Divider between dual radars ── -->
-  <line x1="1035" y1="90" x2="1035" y2="420"
-        stroke="{CYAN}" stroke-width="0.8" stroke-opacity="0.18"
-        stroke-dasharray="3,6"/>
-
-  <!-- ── Animated Cyber Radar Right (Counter-Clockwise · CCW) ── -->
-  {radar2_svg}
 
 </svg>"""
 
