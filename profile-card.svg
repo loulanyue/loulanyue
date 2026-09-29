@@ -416,8 +416,7 @@
     DESIGN  →  CONTRIBUTE  →  VERIFY  →  STEWARD
   </text>
 
-  <!-- ── Footer timestamp updated position for wider canvas ── -->
-  <text x="1312" y="504" class="mono" font-size="10" fill="#527593" letter-spacing="1.2" font-weight="bold" text-anchor="end">
+  <text x="1152" y="504" class="mono" font-size="10" fill="#527593" letter-spacing="1.2" font-weight="bold" text-anchor="end">
     UPDATED 2026-09-29 UTC
   </text>
 
