@@ -524,7 +524,7 @@
   <g>
     <animateTransform attributeName="transform" type="rotate"
       from="180" to="-180"
-      dur="5s" repeatCount="indefinite"/>
+      dur="7s" repeatCount="indefinite"/>
     <path d="M 0,0 L 0.00,-165.00 A 165.0,165.0 0 0,1 42.71,-159.38 Z" fill="#00ff9d" fill-opacity="0.30"/>
     <path d="M 0,0 L 42.71,-159.38 A 165.0,165.0 0 0,1 82.50,-142.89 Z" fill="#00ff9d" fill-opacity="0.16"/>
     <path d="M 0,0 L 82.50,-142.89 A 165.0,165.0 0 0,1 126.40,-106.06 Z" fill="#00ff9d" fill-opacity="0.08"/>

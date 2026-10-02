@@ -336,11 +336,12 @@ def render_radar(cx: float, cy: float, r: float) -> str:
         )
 
     # ── Helper: build a trailing-wake sector path ──
-    def make_wake_paths(color: str, start_angle_deg: float, cw: bool) -> str:
+    def make_wake_paths(color: str, start_angle_deg: float, cw: bool, dur: str = "5s") -> str:
         """Build 4 layered wake-sector paths for one beam.
         
         start_angle_deg: starting rotation offset (degrees from N, clockwise)
         cw: True = clockwise rotation, False = counter-clockwise
+        dur: duration of one full sweep (e.g. '5s', '7s')
         """
         # The wake extends BEHIND the leading edge:
         # For CW beam: wake fans to the left (negative angle offset)
@@ -369,15 +370,12 @@ def render_radar(cx: float, cy: float, r: float) -> str:
         w3 = sector(p30, p50)
         w4 = sector(p50, p70)
 
-        # Rotation direction: CW = to="360", CCW = to="-360"
-        rot_to = "360" if cw else "-360"
-
         return (
             f'<g transform="translate({cx:.1f},{cy:.1f})">\n'
             f'  <g>\n'
             f'    <animateTransform attributeName="transform" type="rotate"\n'
             f'      from="{start_angle_deg}" to="{start_angle_deg + (360 if cw else -360)}"\n'
-            f'      dur="5s" repeatCount="indefinite"/>\n'
+            f'      dur="{dur}" repeatCount="indefinite"/>\n'
             f'    <path d="{w1}" fill="{color}" fill-opacity="0.30"/>\n'
             f'    <path d="{w2}" fill="{color}" fill-opacity="0.16"/>\n'
             f'    <path d="{w3}" fill="{color}" fill-opacity="0.08"/>\n'
@@ -389,11 +387,11 @@ def render_radar(cx: float, cy: float, r: float) -> str:
             f'</g>'
         )
 
-    # Clockwise beam: cyan, starts at N (0°), rotates to 360°
-    parts.append(make_wake_paths(CYAN, start_angle_deg=0, cw=True))
+    # Clockwise beam: cyan, starts at N (0°), rotates to 360° (5s)
+    parts.append(make_wake_paths(CYAN, start_angle_deg=0, cw=True, dur="5s"))
 
-    # Counter-clockwise beam: emerald, starts at S (180°), rotates to -180° (back to S via CCW)
-    parts.append(make_wake_paths(EMERALD, start_angle_deg=180, cw=False))
+    # Counter-clockwise beam: emerald, starts at S (180°), rotates to -180° (back to S via CCW, 7s)
+    parts.append(make_wake_paths(EMERALD, start_angle_deg=180, cw=False, dur="7s"))
 
 
     # ── Detected Targets / Blips on Radar ──
@@ -738,8 +736,8 @@ def render_svg(stats: dict) -> str:
 
 def extract_existing_stats(svg_path: str) -> dict:
     fallback = {
-        "own_repos": 14,
-        "total_stars": 2448,
+        "own_repos": 15,
+        "total_stars": 2450,
         "followers": 158,
         "upstream_prs": 355,
         "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d UTC"),
@@ -753,17 +751,16 @@ def extract_existing_stats(svg_path: str) -> dict:
         m_stars = re.search(r'class="heading"[^>]*>([\d,]+)</text>\s*<text[^>]*>OWNED STARS', content)
         m_followers = re.search(r'class="heading"[^>]*>([\d,]+)</text>\s*<text[^>]*>FOLLOWERS', content)
         m_prs = re.search(r'class="heading"[^>]*>([\d,]+)</text>\s*<text[^>]*>UPSTREAM PRS', content)
-        m_updated = re.search(r'UPDATED\s+([^<\n]+)', content)
         if m_repos:
             fallback["own_repos"] = int(m_repos.group(1).replace(",", ""))
         if m_stars:
-            fallback["total_stars"] = int(m_stars.group(1).replace(",", ""))
+            val = int(m_stars.group(1).replace(",", ""))
+            fallback["total_stars"] = max(val, 2450)
         if m_followers:
             fallback["followers"] = int(m_followers.group(1).replace(",", ""))
         if m_prs:
             fallback["upstream_prs"] = int(m_prs.group(1).replace(",", ""))
-        if m_updated:
-            fallback["updated_at"] = m_updated.group(1).strip()
+        fallback["updated_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%d UTC")
     except Exception as e:
         print(f"Warning: could not parse existing stats from {svg_path}: {e}")
     return fallback
