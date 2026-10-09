@@ -397,7 +397,7 @@
   <text x="48" y="452" class="subheading" font-size="9.5" fill="#527593">自有开放项目</text>
 
   <!-- Stat 2: Stars -->
-  <text x="215" y="416" class="heading" font-size="38" fill="#ffffff" filter="url(#glow)">2,450</text>
+  <text x="215" y="416" class="heading" font-size="38" fill="#ffffff" filter="url(#glow)">2,398</text>
   <text x="215" y="436" class="mono" font-size="9.5" fill="#00e5ff" letter-spacing="0.8" font-weight="bold">OWNED STARS</text>
   <text x="215" y="452" class="subheading" font-size="9.5" fill="#527593">自有项目星标</text>
 
