@@ -392,17 +392,17 @@
 
   <!-- ── 4 Stats Columns (Precise Keynote Metrics) ── -->
   <!-- Stat 1: Own repos -->
-  <text x="48" y="416" class="heading" font-size="38" fill="#ffffff" filter="url(#glow)">15</text>
+  <text x="48" y="416" class="heading" font-size="38" fill="#ffffff" filter="url(#glow)">14</text>
   <text x="48" y="436" class="mono" font-size="9.5" fill="#00e5ff" letter-spacing="0.8" font-weight="bold">ORIGINAL SYSTEMS</text>
   <text x="48" y="452" class="subheading" font-size="9.5" fill="#527593">自有开放项目</text>
 
   <!-- Stat 2: Stars -->
-  <text x="215" y="416" class="heading" font-size="38" fill="#ffffff" filter="url(#glow)">2,398</text>
+  <text x="215" y="416" class="heading" font-size="38" fill="#ffffff" filter="url(#glow)">2,542</text>
   <text x="215" y="436" class="mono" font-size="9.5" fill="#00e5ff" letter-spacing="0.8" font-weight="bold">OWNED STARS</text>
   <text x="215" y="452" class="subheading" font-size="9.5" fill="#527593">自有项目星标</text>
 
   <!-- Stat 3: Followers -->
-  <text x="382" y="416" class="heading" font-size="38" fill="#ffffff" filter="url(#glow)">158</text>
+  <text x="382" y="416" class="heading" font-size="38" fill="#ffffff" filter="url(#glow)">159</text>
   <text x="382" y="436" class="mono" font-size="9.5" fill="#00e5ff" letter-spacing="0.8" font-weight="bold">FOLLOWERS</text>
   <text x="382" y="452" class="subheading" font-size="9.5" fill="#527593">关注者</text>
 
